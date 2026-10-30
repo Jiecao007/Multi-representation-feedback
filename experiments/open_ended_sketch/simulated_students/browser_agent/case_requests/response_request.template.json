@@ -1,0 +1,11 @@
+{
+  "case_id": "your_case_id",
+  "task": {
+    "text": "Replace with the actual task text; leave empty when the task is supplied only as a figure.",
+    "figure_paths": []
+  },
+  "student_response": {
+    "text": "Replace with the student's exact submitted text; leave empty for a figure-only response.",
+    "figure_paths": []
+  }
+}

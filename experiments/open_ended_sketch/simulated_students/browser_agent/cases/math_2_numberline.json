@@ -1,0 +1,155 @@
+{
+  "id": "math_2_numberline",
+  "source_id": "math-2",
+  "source_title": "Math · Number-line setup",
+  "task_text": "A) David and Victoria are playing the Integer Card Game. David drew three cards, −6, 12, and −4.\nWhat is the sum of the cards in his hand?\nB) Model your answer on a number line.",
+  "initial_explanation": "I drew a number line with the numbers on it.",
+  "initial_conceptual_state": {
+    "constructed": true,
+    "misconception_type": "M1",
+    "initial_belief": "I think the numbered line is enough. I do not yet know how to carry out the requested addition or show it in this drawing.",
+    "knowledge_components": [
+      {
+        "component_id": "K1",
+        "label": "Reading the existing number line",
+        "status": "known",
+        "statement": "Recognizes zero and can locate the written number labels on the drawing.",
+        "basis": "Explicit response-conditioned simulation assumption shared across all seven profiles; not a diagnosis of the original author."
+      },
+      {
+        "component_id": "K2",
+        "label": "Meaning of signed numbers",
+        "status": "tentative",
+        "statement": "Recognizes positive and negative labels as positions; has not connected those static positions to the requested operation.",
+        "basis": "Explicit response-conditioned simulation assumption shared across all seven profiles; not a diagnosis of the original author."
+      },
+      {
+        "component_id": "K3",
+        "label": "Combining the card values",
+        "status": "unlearned",
+        "statement": "Cannot yet independently carry out or explain the requested combination of the signed card values.",
+        "basis": "Explicit response-conditioned simulation assumption shared across all seven profiles; not a diagnosis of the original author."
+      },
+      {
+        "component_id": "K4",
+        "label": "Relating the drawing to the requested operation",
+        "status": "unlearned",
+        "statement": "Does not yet know how to choose marks, a starting point, direction, or extent to express the requested operation on this drawing.",
+        "basis": "Explicit response-conditioned simulation assumption shared across all seven profiles; not a diagnosis of the original author."
+      },
+      {
+        "component_id": "K5",
+        "label": "Supporting a result",
+        "status": "unlearned",
+        "statement": "Does not yet know the result or a method for obtaining and supporting it from this response.",
+        "basis": "Explicit response-conditioned simulation assumption shared across all seven profiles; not a diagnosis of the original author."
+      }
+    ],
+    "scope": "The submitted response contains only a labelled scaffold. For this simulation, the omitted operation and result are explicitly configured as skills the learner has not yet learned, rather than as accidental omissions. This shared starting state applies to all seven ability profiles and can change through supported local learning."
+  },
+  "provenance": {
+    "real_source_drawing": true,
+    "constructed_initial_explanation": true,
+    "constructed_initial_conceptual_state": true,
+    "manifest": "results/curated_math_2/math-2.input_manifest.json",
+    "scene": "results/curated_math_2/math-2.scene.json",
+    "source_path": "data/test-data/math-2.jpeg",
+    "student_crop_sha256": "ac86cc7f3563383dd8f3c43c6e8c4a3ab4b124be588f6eca49df1cfff2c46be7",
+    "verified_visible_features": "Number-line axis, end arrowheads, uneven ticks, and labels −10 through 10. No jump sequence or circled sum is visible; initial relations array is empty.",
+    "verification_basis": "Existing app/examples.json entry, curated manifest, and manual-tracing scene; not an inference about motivation or other traits.",
+    "response_grounding_basis": "Task text, visual inspection of the real response and the curated scene; observed omissions are separated from constructed learner awareness.",
+    "response_conditioning_version": "response-bound-prior-v1"
+  },
+  "response_grounding": {
+    "source_id": "math-2",
+    "present_features": [
+      {
+        "feature_id": "F1",
+        "observation": "A horizontal number-line axis with arrowheads at its two ends is already drawn.",
+        "evidence": "The real response image and its curated scene contain the axis and both end arrowheads."
+      },
+      {
+        "feature_id": "F2",
+        "observation": "Tick marks and handwritten number labels from approximately −10 to 10 are present.",
+        "evidence": "The handwritten labels and uneven tick marks are visible in the real response."
+      }
+    ],
+    "missing_parts": [
+      {
+        "gap_id": "G1",
+        "missing_part": "The addition process is not represented in the submitted marks.",
+        "evidence": "The response shows the number-line scaffold but no card-linked jumps, movements or other operation marks. The curated scene has no arithmetic relations.",
+        "affected_components": [
+          "K3",
+          "K4"
+        ],
+        "initial_awareness": "unaware",
+        "learner_belief": "I think drawing the numbered line is enough to answer the modelling part of this task."
+      },
+      {
+        "gap_id": "G2",
+        "missing_part": "No final result or final position is separately identified and connected to the operation.",
+        "evidence": "Number labels are present, but none is singled out as the result of adding the cards; no visible calculation or operation-to-result explanation accompanies the drawing.",
+        "affected_components": [
+          "K5"
+        ],
+        "initial_awareness": "unaware",
+        "learner_belief": "I have not considered whether the drawing needs to identify a result beyond showing the number labels."
+      }
+    ],
+    "inference_limits": "The visible missing parts alone do not prove inability in every real learner. In this configured case the researcher explicitly treats the omitted operation and result as unlearned skills; response_conditioning binds that assumption to the submission. The resulting prior knowledge limits actual replies and actions, not just memory status. No correct result or drawing sequence is supplied."
+  },
+  "response_conditioning": {
+    "source_id": "math-2",
+    "constructed": true,
+    "assumption": "For this simulation, the submitted labelled scaffold reflects an unresolved inability to perform and represent the requested operation, not a learner who already knows the solution but omitted drawing it. Preserve visible label-reading knowledge; the omitted operation and result remain unavailable skills until relevant support or a supported attempt establishes a local step. This is an explicit case assumption, not an automatic diagnosis of every real omission.",
+    "component_bindings": [
+      {
+        "component_id": "K1",
+        "response_feature_ids": [
+          "F1",
+          "F2"
+        ],
+        "response_gap_ids": [],
+        "initial_limitation": "Can recognize the axis, zero, and existing written labels; this does not supply an operation procedure.",
+        "learning_requirement": "Use the visible scaffold to identify labels. Any new operation meaning needs its own relevant support."
+      },
+      {
+        "component_id": "K2",
+        "response_feature_ids": [
+          "F2"
+        ],
+        "response_gap_ids": [],
+        "initial_limitation": "Static sign and position recognition is available only at the stated tentative scope; it is not a rule for carrying out the card task.",
+        "learning_requirement": "A relevant explanation or guided comparison must connect an available sign/position fact to the new operation meaning before applying that connection."
+      },
+      {
+        "component_id": "K3",
+        "response_feature_ids": [],
+        "response_gap_ids": [
+          "G1"
+        ],
+        "initial_limitation": "Does not yet have the requested signed-card combination procedure. Do not produce a complete correct procedure or calculated result from general model knowledge.",
+        "learning_requirement": "A concrete principle, local example, or scaffolded comparison must make the relevant operation relationship available. A generic request to solve or suggest a method does not teach that method."
+      },
+      {
+        "component_id": "K4",
+        "response_feature_ids": [],
+        "response_gap_ids": [
+          "G1"
+        ],
+        "initial_limitation": "Cannot yet independently turn a card value into a complete drawing action. Recognizing a labelled position does not establish a beginning, direction, amount, or expressive mark for an operation.",
+        "learning_requirement": "Needs specific help with the missing diagram convention or relation, then may apply that supported part locally. A generic question about how to show a change does not establish the full drawing procedure."
+      },
+      {
+        "component_id": "K5",
+        "response_feature_ids": [],
+        "response_gap_ids": [
+          "G2"
+        ],
+        "initial_limitation": "No result has been established. Do not calculate it independently using an unlearned procedure or add it as an explanatory caption.",
+        "learning_requirement": "Use a procedure made available through the interaction and an actual local attempt to develop and interpret a result; copying or a generic request to find the result alone is insufficient."
+      }
+    ]
+  }
+}

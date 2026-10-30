@@ -1,0 +1,1500 @@
+{
+  "audit_date": "2026-10-21",
+  "experiment_dir": "outputs/simulated_students_number_line_20261021_no_hint_verified",
+  "scope": "Saved unique student API responses plus tutor responses linked by session IDs; includes P1 failed delivery and retry; excludes earlier diagnostic experiments and unrecorded API attempts.",
+  "prices_verified_from": "https://developers.openai.com/api/docs/pricing",
+  "cache_reference": "https://developers.openai.com/api/docs/guides/prompt-caching",
+  "usd_rates_per_million": {
+    "gpt-6-sol": {
+      "input": 2,
+      "cached": 0.2,
+      "write_30m": 2.5,
+      "write_12h": 5,
+      "output": 10
+    },
+    "gpt-6-luna": {
+      "input": 0.1,
+      "cached": 0.01,
+      "write_30m": 0.125,
+      "write_12h": 0.25,
+      "output": 0.5
+    },
+    "gpt-6-astra": {
+      "input": 10,
+      "cached": 1,
+      "write_30m": 12.5,
+      "write_12h": 25,
+      "output": 50
+    }
+  },
+  "cost_interpretation": "Reference estimates, not reconciled actual bills. New docs use 30m/12h cache-write prices, but tutor responses carry legacy prompt_cache_retention=24h without write lifetime split. Show both hypothetical write-rate scenarios; neither is independently confirmed billed retention. Reasoning is included in output; image input is included in API input usage.",
+  "profiles": {
+    "P1": {
+      "student": {
+        "calls": 15,
+        "input_tokens": 325434,
+        "cached_tokens": 43560,
+        "cache_write_tokens": 281829,
+        "ordinary_input_tokens": 45,
+        "output_tokens": 8478,
+        "reasoning_tokens_already_in_output": 273,
+        "total_tokens": 333912,
+        "reference_usd_30m_write": 0.7981545000000001,
+        "reference_usd_12h_write": 1.5027269999999997
+      },
+      "tutor": {
+        "calls": 18,
+        "input_tokens": 468701,
+        "cached_tokens": 188125,
+        "cache_write_tokens": 280522,
+        "ordinary_input_tokens": 54,
+        "output_tokens": 17392,
+        "reasoning_tokens_already_in_output": 1972,
+        "total_tokens": 486093,
+        "reference_usd_30m_write": 2.6372248550000004,
+        "reference_usd_12h_write": 4.99912423
+      },
+      "combined": {
+        "calls": 33,
+        "input_tokens": 794135,
+        "cached_tokens": 231685,
+        "cache_write_tokens": 562351,
+        "ordinary_input_tokens": 99,
+        "output_tokens": 25870,
+        "reasoning_tokens_already_in_output": 2245,
+        "total_tokens": 820005,
+        "reference_usd_30m_write": 3.4353793550000002,
+        "reference_usd_12h_write": 6.50185123
+      },
+      "tutor_by_model": {
+        "gpt-6-astra": {
+          "calls": 7,
+          "input_tokens": 250455,
+          "cached_tokens": 62407,
+          "cache_write_tokens": 188027,
+          "ordinary_input_tokens": 21,
+          "output_tokens": 4096,
+          "reasoning_tokens_already_in_output": 42,
+          "total_tokens": 254551,
+          "reference_usd_30m_write": 2.6177545,
+          "reference_usd_12h_write": 4.9680919999999995
+        },
+        "gpt-6-luna": {
+          "calls": 11,
+          "input_tokens": 218246,
+          "cached_tokens": 125718,
+          "cache_write_tokens": 92495,
+          "ordinary_input_tokens": 33,
+          "output_tokens": 13296,
+          "reasoning_tokens_already_in_output": 1930,
+          "total_tokens": 231542,
+          "reference_usd_30m_write": 0.019470354999999998,
+          "reference_usd_12h_write": 0.03103223
+        }
+      },
+      "tutor_stage_model_counts": {
+        "dialogue / gpt-6-luna": 9,
+        "evaluator / gpt-6-astra": 3,
+        "tutor / gpt-6-astra": 3,
+        "tutor_rewrite / gpt-6-luna": 2,
+        "tutor_rewrite / gpt-6-astra": 1
+      },
+      "source_records": {
+        "student": [
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P1/step_01_response.json",
+            "response_id": "resp_01554db576ff1ee1016ad841d9616087d1815ded0e03e00d2d",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 14510,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 11603
+              },
+              "output_tokens": 450,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 14960
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P1/step_02_response.json",
+            "response_id": "resp_06ddbc5981f950c4016ad841eb91f087d1bab40921c9649f5e",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 15606,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 12699
+              },
+              "output_tokens": 493,
+              "output_tokens_details": {
+                "reasoning_tokens": 14
+              },
+              "total_tokens": 16099
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P1/step_03_response.json",
+            "response_id": "resp_0d0fc1f5e0c982cd016ad841fd4d9087d1abf7a025d112b6d8",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 16422,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 13515
+              },
+              "output_tokens": 530,
+              "output_tokens_details": {
+                "reasoning_tokens": 29
+              },
+              "total_tokens": 16952
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P1/step_04_response.json",
+            "response_id": "resp_0e4b186c41f742ad016ad8421090a087d1a1a364f13789c5bb",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 17427,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 14520
+              },
+              "output_tokens": 541,
+              "output_tokens_details": {
+                "reasoning_tokens": 70
+              },
+              "total_tokens": 17968
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P1/step_05_response.json",
+            "response_id": "resp_0fe768f3f9a28aed016ad842171e5887d18184c1f6ba0c69c9",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 19159,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 16252
+              },
+              "output_tokens": 470,
+              "output_tokens_details": {
+                "reasoning_tokens": 16
+              },
+              "total_tokens": 19629
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P1/step_06_response.json",
+            "response_id": "resp_0fe6ebbb9907473f016ad84232522487d1b8de3c1904fa0a35",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 19335,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 16428
+              },
+              "output_tokens": 507,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 19842
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P1/step_07_response.json",
+            "response_id": "resp_01be870113c58729016ad8424657a487d19f5c6aff6a3839a1",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 20194,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 17287
+              },
+              "output_tokens": 541,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 20735
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P1/step_08_response.json",
+            "response_id": "resp_033d3babf1e3d022016ad8425a61b087d1b8f3bea33bc1dc8a",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 21094,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 18187
+              },
+              "output_tokens": 598,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 21692
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P1/step_09_response.json",
+            "response_id": "resp_056b19377ea613f6016ad84271e40887d1ae2d9dc78049ccac",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 22274,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 19367
+              },
+              "output_tokens": 606,
+              "output_tokens_details": {
+                "reasoning_tokens": 10
+              },
+              "total_tokens": 22880
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P1/step_10_response.json",
+            "response_id": "resp_023161fecddb2250016ad84278a54887d1b02394e76cf1a173",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 24157,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 21250
+              },
+              "output_tokens": 592,
+              "output_tokens_details": {
+                "reasoning_tokens": 18
+              },
+              "total_tokens": 24749
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P1/step_11_response.json",
+            "response_id": "resp_0cf30d729d0890c8016ad84280263487d1830c6a4b84dad196",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 25633,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 22726
+              },
+              "output_tokens": 598,
+              "output_tokens_details": {
+                "reasoning_tokens": 16
+              },
+              "total_tokens": 26231
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P1/step_12_response.json",
+            "response_id": "resp_07e5d459fecfa709016ad842a0a25887d18e7660a776cfa9d4",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 26060,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 23153
+              },
+              "output_tokens": 659,
+              "output_tokens_details": {
+                "reasoning_tokens": 41
+              },
+              "total_tokens": 26719
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P1/step_13_response.json",
+            "response_id": "resp_0f5eee3e875207ea016ad842b3dc7487d1b7383d686f465e0d",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 26931,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 24024
+              },
+              "output_tokens": 650,
+              "output_tokens_details": {
+                "reasoning_tokens": 20
+              },
+              "total_tokens": 27581
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P1/step_14_response.json",
+            "response_id": "resp_058c668c7d8bc588016ad842f1389487d1bc6e1f34aa64259e",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 27852,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 24945
+              },
+              "output_tokens": 654,
+              "output_tokens_details": {
+                "reasoning_tokens": 21
+              },
+              "total_tokens": 28506
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P1/step_15_response.json",
+            "response_id": "resp_0e38028bdfde8c5b016ad843037c8487d1a0daa55c6ec098bf",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 28780,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 25873
+              },
+              "output_tokens": 589,
+              "output_tokens_details": {
+                "reasoning_tokens": 18
+              },
+              "total_tokens": 29369
+            },
+            "cache_lifetime_detail_saved": false
+          }
+        ],
+        "tutor": [
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_0a5fe5b22a7345a28506d5b8d90fbd79/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_0389d664f0f36c6d016ad842382ba087d18f15c39e4ecacddc",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 19717,
+              "input_tokens_details": {
+                "cached_tokens": 11122,
+                "cache_write_tokens": 8592
+              },
+              "output_tokens": 1536,
+              "output_tokens_details": {
+                "reasoning_tokens": 205
+              },
+              "total_tokens": 21253
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_0c399e3d4c7c40ac8c214112af717678/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_0ea52f0e06f96daa016ad841f0ded487d1ad8408e438fd4f2e",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 18647,
+              "input_tokens_details": {
+                "cached_tokens": 11122,
+                "cache_write_tokens": 7522
+              },
+              "output_tokens": 1419,
+              "output_tokens_details": {
+                "reasoning_tokens": 135
+              },
+              "total_tokens": 20066
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_2cb49e98082c412a8fafb3e1b855a85c/evaluator.response.json",
+            "stage": "evaluator",
+            "response_id": "resp_017e196d79a3e46a016ad8421c7be087d19a34ab3f8743bd1a",
+            "model": "gpt-6-astra",
+            "usage": {
+              "input_tokens": 36137,
+              "input_tokens_details": {
+                "cached_tokens": 4781,
+                "cache_write_tokens": 31353
+              },
+              "output_tokens": 966,
+              "output_tokens_details": {
+                "reasoning_tokens": 42
+              },
+              "total_tokens": 37103
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_2cb49e98082c412a8fafb3e1b855a85c/tutor.response.json",
+            "stage": "tutor",
+            "response_id": "resp_053892f8cb1181ae016ad8422ba04887d1973872d32fcc69e8",
+            "model": "gpt-6-astra",
+            "usage": {
+              "input_tokens": 38899,
+              "input_tokens_details": {
+                "cached_tokens": 6953,
+                "cache_write_tokens": 31943
+              },
+              "output_tokens": 478,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 39377
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_394ff851769f4df386448d4f8b1c9f9a/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_072274665cd2885a016ad842a80aec87d19107c8087cb2d456",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 21371,
+              "input_tokens_details": {
+                "cached_tokens": 11122,
+                "cache_write_tokens": 10246
+              },
+              "output_tokens": 987,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 22358
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_394ff851769f4df386448d4f8b1c9f9a/tutor_rewrite.response.json",
+            "stage": "tutor_rewrite",
+            "response_id": "resp_0ccaf588a7254d14016ad842b01bf487d19c2c4e550d6f6510",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 19438,
+              "input_tokens_details": {
+                "cached_tokens": 7687,
+                "cache_write_tokens": 11748
+              },
+              "output_tokens": 239,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 19677
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_4fdb02a8079140e38e1d4c135f035422/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_012a6aef6bf92ff8016ad84260962c87d1bb9cde28efc90d51",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 19841,
+              "input_tokens_details": {
+                "cached_tokens": 11122,
+                "cache_write_tokens": 8716
+              },
+              "output_tokens": 1852,
+              "output_tokens_details": {
+                "reasoning_tokens": 497
+              },
+              "total_tokens": 21693
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_5d0be087375e49798fe561227933abcf/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_0877b66d5e891d1a016ad841de9bf087d19cf94708dd68554e",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 18528,
+              "input_tokens_details": {
+                "cached_tokens": 11122,
+                "cache_write_tokens": 7403
+              },
+              "output_tokens": 1409,
+              "output_tokens_details": {
+                "reasoning_tokens": 197
+              },
+              "total_tokens": 19937
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_5d91a42a77d5459e854cc7a7b13a8f56/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_0d52410146598eec016ad84203421c87d1b19573c377ceb4fe",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 18802,
+              "input_tokens_details": {
+                "cached_tokens": 11122,
+                "cache_write_tokens": 7677
+              },
+              "output_tokens": 1471,
+              "output_tokens_details": {
+                "reasoning_tokens": 154
+              },
+              "total_tokens": 20273
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_6be6dba19e0148cfb8da7ff052f21073/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_06cd068c6f434eed016ad842b99f9c87d1b0331f349e3f4455",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 21371,
+              "input_tokens_details": {
+                "cached_tokens": 21368,
+                "cache_write_tokens": 0
+              },
+              "output_tokens": 1291,
+              "output_tokens_details": {
+                "reasoning_tokens": 261
+              },
+              "total_tokens": 22662
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_6be6dba19e0148cfb8da7ff052f21073/tutor_rewrite.response.json",
+            "stage": "tutor_rewrite",
+            "response_id": "resp_01b78ceefb2c6a6a016ad842c49edc87d1943ce4ce2aec3af4",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 19471,
+              "input_tokens_details": {
+                "cached_tokens": 7687,
+                "cache_write_tokens": 11781
+              },
+              "output_tokens": 374,
+              "output_tokens_details": {
+                "reasoning_tokens": 133
+              },
+              "total_tokens": 19845
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_7924376351c54ce09867c112a36ce4f9/evaluator.response.json",
+            "stage": "evaluator",
+            "response_id": "resp_0148279b7df2f6ca016ad841c3c29887d1a3b7653e97d7b713",
+            "model": "gpt-6-astra",
+            "usage": {
+              "input_tokens": 25036,
+              "input_tokens_details": {
+                "cached_tokens": 25033,
+                "cache_write_tokens": 0
+              },
+              "output_tokens": 765,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 25801
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_7924376351c54ce09867c112a36ce4f9/tutor.response.json",
+            "stage": "tutor",
+            "response_id": "resp_0dc84cf3665235b0016ad841d2bd0087d197afb3c546fac54f",
+            "model": "gpt-6-astra",
+            "usage": {
+              "input_tokens": 27472,
+              "input_tokens_details": {
+                "cached_tokens": 6953,
+                "cache_write_tokens": 20516
+              },
+              "output_tokens": 281,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 27753
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_9cff6374b98a4b25a460d9f21bcc1f77/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_0e3e8e8add75f14b016ad8424cb81487d1a25204db1ce45790",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 19783,
+              "input_tokens_details": {
+                "cached_tokens": 11122,
+                "cache_write_tokens": 8658
+              },
+              "output_tokens": 1519,
+              "output_tokens_details": {
+                "reasoning_tokens": 207
+              },
+              "total_tokens": 21302
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_d1b8bc94ece2490f90982dc13e201149/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_05e52a00e7dfc51b016ad842f88ae087d19bef212c5f148c1b",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 21277,
+              "input_tokens_details": {
+                "cached_tokens": 11122,
+                "cache_write_tokens": 10152
+              },
+              "output_tokens": 1199,
+              "output_tokens_details": {
+                "reasoning_tokens": 141
+              },
+              "total_tokens": 22476
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_ffcb31ec090f406987a49477eef50b55/evaluator.response.json",
+            "stage": "evaluator",
+            "response_id": "resp_001374404db964ff016ad84285db6c87d1abe2207ea89871d8",
+            "model": "gpt-6-astra",
+            "usage": {
+              "input_tokens": 38987,
+              "input_tokens_details": {
+                "cached_tokens": 4781,
+                "cache_write_tokens": 34203
+              },
+              "output_tokens": 784,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 39771
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_ffcb31ec090f406987a49477eef50b55/tutor.response.json",
+            "stage": "tutor",
+            "response_id": "resp_01094bdd6624fb2c016ad8429411a487d1995e7ffb59a6b3f2",
+            "model": "gpt-6-astra",
+            "usage": {
+              "input_tokens": 41754,
+              "input_tokens_details": {
+                "cached_tokens": 6953,
+                "cache_write_tokens": 34798
+              },
+              "output_tokens": 462,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 42216
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_ffcb31ec090f406987a49477eef50b55/tutor_rewrite.response.json",
+            "stage": "tutor_rewrite",
+            "response_id": "resp_0767fa497cf01baf016ad84299c08087d1b014abf1408f3b80",
+            "model": "gpt-6-astra",
+            "usage": {
+              "input_tokens": 42170,
+              "input_tokens_details": {
+                "cached_tokens": 6953,
+                "cache_write_tokens": 35214
+              },
+              "output_tokens": 360,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 42530
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          }
+        ]
+      }
+    },
+    "P2": {
+      "student": {
+        "calls": 16,
+        "input_tokens": 352136,
+        "cached_tokens": 46464,
+        "cache_write_tokens": 305624,
+        "ordinary_input_tokens": 48,
+        "output_tokens": 8709,
+        "reasoning_tokens_already_in_output": 224,
+        "total_tokens": 360845,
+        "reference_usd_30m_write": 0.8605387999999999,
+        "reference_usd_12h_write": 1.6245987999999998
+      },
+      "tutor": {
+        "calls": 18,
+        "input_tokens": 488092,
+        "cached_tokens": 174973,
+        "cache_write_tokens": 313065,
+        "ordinary_input_tokens": 54,
+        "output_tokens": 18198,
+        "reasoning_tokens_already_in_output": 2219,
+        "total_tokens": 506290,
+        "reference_usd_30m_write": 3.1254994750000002,
+        "reference_usd_12h_write": 5.907774099999999
+      },
+      "combined": {
+        "calls": 34,
+        "input_tokens": 840228,
+        "cached_tokens": 221437,
+        "cache_write_tokens": 618689,
+        "ordinary_input_tokens": 102,
+        "output_tokens": 26907,
+        "reasoning_tokens_already_in_output": 2443,
+        "total_tokens": 867135,
+        "reference_usd_30m_write": 3.9860382750000003,
+        "reference_usd_12h_write": 7.532372899999999
+      },
+      "tutor_by_model": {
+        "gpt-6-astra": {
+          "calls": 8,
+          "input_tokens": 288880,
+          "cached_tokens": 67188,
+          "cache_write_tokens": 221668,
+          "ordinary_input_tokens": 24,
+          "output_tokens": 5366,
+          "reasoning_tokens_already_in_output": 150,
+          "total_tokens": 294246,
+          "reference_usd_30m_write": 3.1065780000000003,
+          "reference_usd_12h_write": 5.877428
+        },
+        "gpt-6-luna": {
+          "calls": 10,
+          "input_tokens": 199212,
+          "cached_tokens": 107785,
+          "cache_write_tokens": 91397,
+          "ordinary_input_tokens": 30,
+          "output_tokens": 12832,
+          "reasoning_tokens_already_in_output": 2069,
+          "total_tokens": 212044,
+          "reference_usd_30m_write": 0.018921475,
+          "reference_usd_12h_write": 0.0303461
+        }
+      },
+      "tutor_stage_model_counts": {
+        "dialogue / gpt-6-luna": 9,
+        "evaluator / gpt-6-astra": 4,
+        "tutor / gpt-6-astra": 4,
+        "tutor_rewrite / gpt-6-luna": 1
+      },
+      "source_records": {
+        "student": [
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P2/step_01_response.json",
+            "response_id": "resp_05e0d680c1f01978016ad841d9634887d182ed87235a229ff0",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 14561,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 11654
+              },
+              "output_tokens": 432,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 14993
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P2/step_02_response.json",
+            "response_id": "resp_02aa88d22b94cf50016ad841ebdaa087d19035461163f9108b",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 15644,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 12737
+              },
+              "output_tokens": 469,
+              "output_tokens_details": {
+                "reasoning_tokens": 15
+              },
+              "total_tokens": 16113
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P2/step_03_response.json",
+            "response_id": "resp_05432292db5ce47e016ad841fbd00487d1bf87fd33ed649403",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 16387,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 13480
+              },
+              "output_tokens": 477,
+              "output_tokens_details": {
+                "reasoning_tokens": 19
+              },
+              "total_tokens": 16864
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P2/step_04_response.json",
+            "response_id": "resp_0ff8a2c67fa85899016ad8421094a887d19657d58d36b34d19",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 17313,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 14406
+              },
+              "output_tokens": 487,
+              "output_tokens_details": {
+                "reasoning_tokens": 13
+              },
+              "total_tokens": 17800
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P2/step_05_response.json",
+            "response_id": "resp_0714026100c4f73f016ad84216543887d186f27ae577a0127d",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 19084,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 16177
+              },
+              "output_tokens": 468,
+              "output_tokens_details": {
+                "reasoning_tokens": 13
+              },
+              "total_tokens": 19552
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P2/step_06_response.json",
+            "response_id": "resp_0fa6a9db4421ad19016ad84231d95887d198801848a5a6568a",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 19317,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 16410
+              },
+              "output_tokens": 472,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 19789
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P2/step_07_response.json",
+            "response_id": "resp_00dafd919860dd5c016ad84246d77c87d1bccf819a64b68102",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 20090,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 17183
+              },
+              "output_tokens": 568,
+              "output_tokens_details": {
+                "reasoning_tokens": 27
+              },
+              "total_tokens": 20658
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P2/step_08_response.json",
+            "response_id": "resp_0829fbc8ad789668016ad8425aa14087d18b1a96e23824bde2",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 21196,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 18289
+              },
+              "output_tokens": 548,
+              "output_tokens_details": {
+                "reasoning_tokens": 11
+              },
+              "total_tokens": 21744
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P2/step_09_response.json",
+            "response_id": "resp_04f6eda2096ba9f6016ad84260f58887d1ab1a212cdccb97f9",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 23026,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 20119
+              },
+              "output_tokens": 532,
+              "output_tokens_details": {
+                "reasoning_tokens": 13
+              },
+              "total_tokens": 23558
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P2/step_10_response.json",
+            "response_id": "resp_086d7cbc1235725c016ad8428302b087d1a06a4a695aa24a7a",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 23345,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 20438
+              },
+              "output_tokens": 527,
+              "output_tokens_details": {
+                "reasoning_tokens": 11
+              },
+              "total_tokens": 23872
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P2/step_11_response.json",
+            "response_id": "resp_041555db55171663016ad84294a14c87d1ba23a171e147eceb",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 24140,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 21233
+              },
+              "output_tokens": 611,
+              "output_tokens_details": {
+                "reasoning_tokens": 19
+              },
+              "total_tokens": 24751
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P2/step_12_response.json",
+            "response_id": "resp_0ddbf54e46d9e999016ad842aa130c87d1a8594a63d15721fe",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 25314,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 22407
+              },
+              "output_tokens": 599,
+              "output_tokens_details": {
+                "reasoning_tokens": 9
+              },
+              "total_tokens": 25913
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P2/step_13_response.json",
+            "response_id": "resp_04a0d0a635d5f351016ad842b0ec1087d1a18098862edbca92",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 27214,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 24307
+              },
+              "output_tokens": 591,
+              "output_tokens_details": {
+                "reasoning_tokens": 11
+              },
+              "total_tokens": 27805
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P2/step_14_response.json",
+            "response_id": "resp_0add9c720b7029bd016ad842cccd5887d1897d6975c5137812",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 27598,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 24691
+              },
+              "output_tokens": 628,
+              "output_tokens_details": {
+                "reasoning_tokens": 18
+              },
+              "total_tokens": 28226
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P2/step_15_response.json",
+            "response_id": "resp_033cedef2858db6b016ad842e3037487d1ac22104bbe03c672",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 28455,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 25548
+              },
+              "output_tokens": 678,
+              "output_tokens_details": {
+                "reasoning_tokens": 21
+              },
+              "total_tokens": 29133
+            },
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "outputs/simulated_students_number_line_20261021_no_hint_verified/P2/step_16_response.json",
+            "response_id": "resp_020d666dd42d75d1016ad842f3c58c87d19fb08880804f8962",
+            "model": "gpt-6-sol",
+            "usage": {
+              "input_tokens": 29452,
+              "input_tokens_details": {
+                "cached_tokens": 2904,
+                "cache_write_tokens": 26545
+              },
+              "output_tokens": 622,
+              "output_tokens_details": {
+                "reasoning_tokens": 24
+              },
+              "total_tokens": 30074
+            },
+            "cache_lifetime_detail_saved": false
+          }
+        ],
+        "tutor": [
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_0520f5a749544140bd0d754a709d907f/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_0b5f162c2b505b35016ad8429af32c87d19dad44ca55dd0151",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 20694,
+              "input_tokens_details": {
+                "cached_tokens": 11122,
+                "cache_write_tokens": 9569
+              },
+              "output_tokens": 1612,
+              "output_tokens_details": {
+                "reasoning_tokens": 268
+              },
+              "total_tokens": 22306
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_2b32f10de1854b6a9c3f89ab184212bc/evaluator.response.json",
+            "stage": "evaluator",
+            "response_id": "resp_084293555f15566a016ad842668c2c87d196ee8d44f2a9b61a",
+            "model": "gpt-6-astra",
+            "usage": {
+              "input_tokens": 38064,
+              "input_tokens_details": {
+                "cached_tokens": 4781,
+                "cache_write_tokens": 33280
+              },
+              "output_tokens": 973,
+              "output_tokens_details": {
+                "reasoning_tokens": 75
+              },
+              "total_tokens": 39037
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_2b32f10de1854b6a9c3f89ab184212bc/tutor.response.json",
+            "stage": "tutor",
+            "response_id": "resp_0e0c44819e8f0578016ad842774d2887d1bc06661d8db12920",
+            "model": "gpt-6-astra",
+            "usage": {
+              "input_tokens": 40834,
+              "input_tokens_details": {
+                "cached_tokens": 6953,
+                "cache_write_tokens": 33878
+              },
+              "output_tokens": 494,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 41328
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_415f8e24ea44425aae49d40fb505552d/evaluator.response.json",
+            "stage": "evaluator",
+            "response_id": "resp_01058efac711065a016ad842b6eabc87d19eefcbc3e79bb7b3",
+            "model": "gpt-6-astra",
+            "usage": {
+              "input_tokens": 39938,
+              "input_tokens_details": {
+                "cached_tokens": 4781,
+                "cache_write_tokens": 35154
+              },
+              "output_tokens": 907,
+              "output_tokens_details": {
+                "reasoning_tokens": 40
+              },
+              "total_tokens": 40845
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_415f8e24ea44425aae49d40fb505552d/tutor.response.json",
+            "stage": "tutor",
+            "response_id": "resp_04338cfd527e01be016ad842c5460887d1ac931309f2165fff",
+            "model": "gpt-6-astra",
+            "usage": {
+              "input_tokens": 42710,
+              "input_tokens_details": {
+                "cached_tokens": 6953,
+                "cache_write_tokens": 35754
+              },
+              "output_tokens": 434,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 43144
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_5535a2af7f724d6f8ea7034d6af7e645/evaluator.response.json",
+            "stage": "evaluator",
+            "response_id": "resp_0cc7abe3f619dd47016ad841c3d17087d1bc637e11bc92b572",
+            "model": "gpt-6-astra",
+            "usage": {
+              "input_tokens": 25036,
+              "input_tokens_details": {
+                "cached_tokens": 25033,
+                "cache_write_tokens": 0
+              },
+              "output_tokens": 764,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 25800
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_5535a2af7f724d6f8ea7034d6af7e645/tutor.response.json",
+            "stage": "tutor",
+            "response_id": "resp_0ba5efe1af3b890a016ad841d1174c87d182d03c2ed7a68c8d",
+            "model": "gpt-6-astra",
+            "usage": {
+              "input_tokens": 27471,
+              "input_tokens_details": {
+                "cached_tokens": 6953,
+                "cache_write_tokens": 20515
+              },
+              "output_tokens": 381,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 27852
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_5aaece20db624217b3a1d3c91b139c29/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_05b384ca44cd03db016ad841defadc87d1b6e143fd77e61017",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 18524,
+              "input_tokens_details": {
+                "cached_tokens": 11122,
+                "cache_write_tokens": 7399
+              },
+              "output_tokens": 1457,
+              "output_tokens_details": {
+                "reasoning_tokens": 203
+              },
+              "total_tokens": 19981
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_637fcf1dd7b0481e800d80b4b6bcfa59/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_04ed966e9dbbc98a016ad842e944bc87d19f5dd9537f533e2e",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 21401,
+              "input_tokens_details": {
+                "cached_tokens": 11122,
+                "cache_write_tokens": 10276
+              },
+              "output_tokens": 1178,
+              "output_tokens_details": {
+                "reasoning_tokens": 136
+              },
+              "total_tokens": 22579
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_6da982159f134c86a509f5de0aacd427/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_0e65c981338526cf016ad8424d14a887d1bef9810aad059600",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 19771,
+              "input_tokens_details": {
+                "cached_tokens": 11122,
+                "cache_write_tokens": 8646
+              },
+              "output_tokens": 1569,
+              "output_tokens_details": {
+                "reasoning_tokens": 213
+              },
+              "total_tokens": 21340
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_7f0197b6d69045c6bb6dd59dac034c85/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_0d17619e4516b102016ad842d320d487d1961c92ad43327e3b",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 21495,
+              "input_tokens_details": {
+                "cached_tokens": 11122,
+                "cache_write_tokens": 10370
+              },
+              "output_tokens": 1236,
+              "output_tokens_details": {
+                "reasoning_tokens": 196
+              },
+              "total_tokens": 22731
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_7f0197b6d69045c6bb6dd59dac034c85/tutor_rewrite.response.json",
+            "stage": "tutor_rewrite",
+            "response_id": "resp_077c68c03acb0808016ad842def1e087d18da5a8d026a6ec45",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 19603,
+              "input_tokens_details": {
+                "cached_tokens": 7687,
+                "cache_write_tokens": 11913
+              },
+              "output_tokens": 245,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 19848
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_8edb9d51046a42aebbf01b6b565a00c4/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_02f0b3020d49f213016ad84288924c87d18c04549e5b51ff7a",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 20644,
+              "input_tokens_details": {
+                "cached_tokens": 11122,
+                "cache_write_tokens": 9519
+              },
+              "output_tokens": 1181,
+              "output_tokens_details": {
+                "reasoning_tokens": 207
+              },
+              "total_tokens": 21825
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_8f30620d60c04c049c171b4bfe0221c4/evaluator.response.json",
+            "stage": "evaluator",
+            "response_id": "resp_09340e6a33d07418016ad8421b62dc87d1bd59ea997beab147",
+            "model": "gpt-6-astra",
+            "usage": {
+              "input_tokens": 36047,
+              "input_tokens_details": {
+                "cached_tokens": 4781,
+                "cache_write_tokens": 31263
+              },
+              "output_tokens": 932,
+              "output_tokens_details": {
+                "reasoning_tokens": 35
+              },
+              "total_tokens": 36979
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_8f30620d60c04c049c171b4bfe0221c4/tutor.response.json",
+            "stage": "tutor",
+            "response_id": "resp_01ddd37f878b19f5016ad8422a664c87d1a65905a22aab6e31",
+            "model": "gpt-6-astra",
+            "usage": {
+              "input_tokens": 38780,
+              "input_tokens_details": {
+                "cached_tokens": 6953,
+                "cache_write_tokens": 31824
+              },
+              "output_tokens": 481,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 39261
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_94729ddfc13f4abebc4865773d91004f/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_0d2f747ab3babe5c016ad841f094c087d1b92f32c25e6fdd22",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 18643,
+              "input_tokens_details": {
+                "cached_tokens": 11122,
+                "cache_write_tokens": 7518
+              },
+              "output_tokens": 1133,
+              "output_tokens_details": {
+                "reasoning_tokens": 198
+              },
+              "total_tokens": 19776
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_988ce67f9ebc40df9fed8d8dcc541524/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_0d6514ca34d37947016ad84237046c87d19f5e7f78ef861a4d",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 19687,
+              "input_tokens_details": {
+                "cached_tokens": 11122,
+                "cache_write_tokens": 8562
+              },
+              "output_tokens": 1607,
+              "output_tokens_details": {
+                "reasoning_tokens": 255
+              },
+              "total_tokens": 21294
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          },
+          {
+            "path": "experiments/open_ended_sketch/app/runs/feedback_turn_fe9126c863da4eda9311354103893a6e/dialogue.response.json",
+            "stage": "dialogue",
+            "response_id": "resp_0b83053db39058fc016ad84201a6b887d1a6643383c488b853",
+            "model": "gpt-6-luna",
+            "usage": {
+              "input_tokens": 18750,
+              "input_tokens_details": {
+                "cached_tokens": 11122,
+                "cache_write_tokens": 7625
+              },
+              "output_tokens": 1614,
+              "output_tokens_details": {
+                "reasoning_tokens": 393
+              },
+              "total_tokens": 20364
+            },
+            "service_tier": "default",
+            "prompt_cache_retention": "24h",
+            "cache_lifetime_detail_saved": false
+          }
+        ]
+      }
+    }
+  }
+}

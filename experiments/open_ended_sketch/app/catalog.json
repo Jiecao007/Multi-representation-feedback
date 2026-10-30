@@ -1,0 +1,797 @@
+{
+  "version": "1.0",
+  "topics": [
+    {
+      "id": "general",
+      "label": "General",
+      "assets": [
+        {
+          "id": "box",
+          "label": "Box",
+          "kind": "library_object",
+          "width": 160,
+          "height": 160,
+          "glyph": [
+            {
+              "kind": "rect",
+              "points": [
+                {
+                  "x": 60,
+                  "y": 60
+                },
+                {
+                  "x": 940,
+                  "y": 940
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            }
+          ]
+        },
+        {
+          "id": "circle",
+          "label": "Circle",
+          "kind": "library_object",
+          "width": 160,
+          "height": 160,
+          "glyph": [
+            {
+              "kind": "ellipse",
+              "points": [
+                {
+                  "x": 50,
+                  "y": 50
+                },
+                {
+                  "x": 950,
+                  "y": 950
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            }
+          ]
+        },
+        {
+          "id": "triangle",
+          "label": "Triangle",
+          "kind": "library_object",
+          "width": 160,
+          "height": 160,
+          "glyph": [
+            {
+              "kind": "polygon",
+              "points": [
+                {
+                  "x": 500,
+                  "y": 80
+                },
+                {
+                  "x": 950,
+                  "y": 900
+                },
+                {
+                  "x": 50,
+                  "y": 900
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            }
+          ]
+        },
+        {
+          "id": "process",
+          "label": "Process",
+          "kind": "library_object",
+          "width": 220,
+          "height": 100,
+          "glyph": [
+            {
+              "kind": "rect",
+              "points": [
+                {
+                  "x": 60,
+                  "y": 60
+                },
+                {
+                  "x": 940,
+                  "y": 940
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            },
+            {
+              "kind": "text",
+              "points": [
+                {
+                  "x": 200,
+                  "y": 520
+                }
+              ],
+              "text": "Process",
+              "filled": false,
+              "color": "#4d4860"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "electricity",
+      "label": "Electricity & fields",
+      "assets": [
+        {
+          "id": "positive-charge",
+          "label": "Positive charge",
+          "kind": "library_object",
+          "width": 160,
+          "height": 160,
+          "glyph": [
+            {
+              "kind": "ellipse",
+              "points": [
+                {
+                  "x": 50,
+                  "y": 50
+                },
+                {
+                  "x": 950,
+                  "y": 950
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            },
+            {
+              "kind": "polyline",
+              "points": [
+                {
+                  "x": 280,
+                  "y": 500
+                },
+                {
+                  "x": 720,
+                  "y": 500
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            },
+            {
+              "kind": "polyline",
+              "points": [
+                {
+                  "x": 500,
+                  "y": 280
+                },
+                {
+                  "x": 500,
+                  "y": 720
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            }
+          ]
+        },
+        {
+          "id": "negative-charge",
+          "label": "Negative charge",
+          "kind": "library_object",
+          "width": 160,
+          "height": 160,
+          "glyph": [
+            {
+              "kind": "ellipse",
+              "points": [
+                {
+                  "x": 50,
+                  "y": 50
+                },
+                {
+                  "x": 950,
+                  "y": 950
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            },
+            {
+              "kind": "polyline",
+              "points": [
+                {
+                  "x": 280,
+                  "y": 500
+                },
+                {
+                  "x": 720,
+                  "y": 500
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            }
+          ]
+        },
+        {
+          "id": "test-charge",
+          "label": "Test charge",
+          "kind": "library_object",
+          "width": 110,
+          "height": 110,
+          "glyph": [
+            {
+              "kind": "ellipse",
+              "points": [
+                {
+                  "x": 50,
+                  "y": 50
+                },
+                {
+                  "x": 950,
+                  "y": 950
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            },
+            {
+              "kind": "text",
+              "points": [
+                {
+                  "x": 400,
+                  "y": 520
+                }
+              ],
+              "text": "q",
+              "filled": false,
+              "color": "#4d4860"
+            }
+          ]
+        },
+        {
+          "id": "neutral-particle",
+          "label": "Particle",
+          "kind": "library_object",
+          "width": 100,
+          "height": 100,
+          "glyph": [
+            {
+              "kind": "ellipse",
+              "points": [
+                {
+                  "x": 50,
+                  "y": 50
+                },
+                {
+                  "x": 950,
+                  "y": 950
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "energy",
+      "label": "Energy & water",
+      "assets": [
+        {
+          "id": "energy-store",
+          "label": "Energy store",
+          "kind": "library_object",
+          "width": 220,
+          "height": 100,
+          "glyph": [
+            {
+              "kind": "rect",
+              "points": [
+                {
+                  "x": 60,
+                  "y": 60
+                },
+                {
+                  "x": 940,
+                  "y": 940
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            },
+            {
+              "kind": "text",
+              "points": [
+                {
+                  "x": 170,
+                  "y": 520
+                }
+              ],
+              "text": "Energy",
+              "filled": false,
+              "color": "#4d4860"
+            }
+          ]
+        },
+        {
+          "id": "water-container",
+          "label": "Water container",
+          "kind": "library_object",
+          "width": 160,
+          "height": 160,
+          "glyph": [
+            {
+              "kind": "polyline",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 100
+                },
+                {
+                  "x": 100,
+                  "y": 900
+                },
+                {
+                  "x": 900,
+                  "y": 900
+                },
+                {
+                  "x": 900,
+                  "y": 100
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            },
+            {
+              "kind": "polyline",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 500
+                },
+                {
+                  "x": 250,
+                  "y": 450
+                },
+                {
+                  "x": 400,
+                  "y": 520
+                },
+                {
+                  "x": 550,
+                  "y": 450
+                },
+                {
+                  "x": 700,
+                  "y": 520
+                },
+                {
+                  "x": 900,
+                  "y": 470
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#308ab7"
+            }
+          ]
+        },
+        {
+          "id": "process-energy",
+          "label": "Process",
+          "kind": "library_object",
+          "width": 220,
+          "height": 100,
+          "glyph": [
+            {
+              "kind": "rect",
+              "points": [
+                {
+                  "x": 60,
+                  "y": 60
+                },
+                {
+                  "x": 940,
+                  "y": 940
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            },
+            {
+              "kind": "text",
+              "points": [
+                {
+                  "x": 180,
+                  "y": 520
+                }
+              ],
+              "text": "Process",
+              "filled": false,
+              "color": "#4d4860"
+            }
+          ]
+        },
+        {
+          "id": "system-boundary",
+          "label": "System boundary",
+          "kind": "library_object",
+          "width": 380,
+          "height": 270,
+          "glyph": [
+            {
+              "kind": "rect",
+              "points": [
+                {
+                  "x": 10,
+                  "y": 10
+                },
+                {
+                  "x": 990,
+                  "y": 990
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "states",
+      "label": "States of matter",
+      "assets": [
+        {
+          "id": "solid-block",
+          "label": "Solid block",
+          "kind": "library_object",
+          "width": 160,
+          "height": 160,
+          "glyph": [
+            {
+              "kind": "polygon",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 300
+                },
+                {
+                  "x": 630,
+                  "y": 350
+                },
+                {
+                  "x": 900,
+                  "y": 120
+                },
+                {
+                  "x": 370,
+                  "y": 80
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            },
+            {
+              "kind": "polygon",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 300
+                },
+                {
+                  "x": 630,
+                  "y": 350
+                },
+                {
+                  "x": 640,
+                  "y": 920
+                },
+                {
+                  "x": 100,
+                  "y": 820
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            },
+            {
+              "kind": "polygon",
+              "points": [
+                {
+                  "x": 630,
+                  "y": 350
+                },
+                {
+                  "x": 900,
+                  "y": 120
+                },
+                {
+                  "x": 900,
+                  "y": 680
+                },
+                {
+                  "x": 640,
+                  "y": 920
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            }
+          ]
+        },
+        {
+          "id": "liquid-container",
+          "label": "Liquid container",
+          "kind": "library_object",
+          "width": 160,
+          "height": 160,
+          "glyph": [
+            {
+              "kind": "polyline",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 100
+                },
+                {
+                  "x": 100,
+                  "y": 900
+                },
+                {
+                  "x": 900,
+                  "y": 900
+                },
+                {
+                  "x": 900,
+                  "y": 100
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            },
+            {
+              "kind": "polyline",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 500
+                },
+                {
+                  "x": 250,
+                  "y": 450
+                },
+                {
+                  "x": 400,
+                  "y": 520
+                },
+                {
+                  "x": 550,
+                  "y": 450
+                },
+                {
+                  "x": 700,
+                  "y": 520
+                },
+                {
+                  "x": 900,
+                  "y": 470
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#308ab7"
+            }
+          ]
+        },
+        {
+          "id": "particle",
+          "label": "Particle",
+          "kind": "library_object",
+          "width": 70,
+          "height": 70,
+          "glyph": [
+            {
+              "kind": "ellipse",
+              "points": [
+                {
+                  "x": 50,
+                  "y": 50
+                },
+                {
+                  "x": 950,
+                  "y": 950
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mechanics",
+      "label": "Forces & motion",
+      "assets": [
+        {
+          "id": "block",
+          "label": "Block",
+          "kind": "library_object",
+          "width": 160,
+          "height": 160,
+          "glyph": [
+            {
+              "kind": "polygon",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 300
+                },
+                {
+                  "x": 630,
+                  "y": 350
+                },
+                {
+                  "x": 900,
+                  "y": 120
+                },
+                {
+                  "x": 370,
+                  "y": 80
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            },
+            {
+              "kind": "polygon",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 300
+                },
+                {
+                  "x": 630,
+                  "y": 350
+                },
+                {
+                  "x": 640,
+                  "y": 920
+                },
+                {
+                  "x": 100,
+                  "y": 820
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            },
+            {
+              "kind": "polygon",
+              "points": [
+                {
+                  "x": 630,
+                  "y": 350
+                },
+                {
+                  "x": 900,
+                  "y": 120
+                },
+                {
+                  "x": 900,
+                  "y": 680
+                },
+                {
+                  "x": 640,
+                  "y": 920
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            }
+          ]
+        },
+        {
+          "id": "ramp",
+          "label": "Ramp",
+          "kind": "library_object",
+          "width": 260,
+          "height": 150,
+          "glyph": [
+            {
+              "kind": "polygon",
+              "points": [
+                {
+                  "x": 50,
+                  "y": 900
+                },
+                {
+                  "x": 950,
+                  "y": 900
+                },
+                {
+                  "x": 950,
+                  "y": 150
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            }
+          ]
+        },
+        {
+          "id": "pulley",
+          "label": "Pulley",
+          "kind": "library_object",
+          "width": 160,
+          "height": 160,
+          "glyph": [
+            {
+              "kind": "ellipse",
+              "points": [
+                {
+                  "x": 50,
+                  "y": 50
+                },
+                {
+                  "x": 950,
+                  "y": 950
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            },
+            {
+              "kind": "ellipse",
+              "points": [
+                {
+                  "x": 420,
+                  "y": 420
+                },
+                {
+                  "x": 580,
+                  "y": 580
+                }
+              ],
+              "text": "",
+              "filled": false,
+              "color": "#4d4860"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

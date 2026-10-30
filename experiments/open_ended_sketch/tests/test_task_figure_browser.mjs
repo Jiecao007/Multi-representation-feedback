@@ -1,0 +1,95 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url);
+const {chromium}=require('/Users/jiecao/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const out=path.resolve('outputs/task_figure_ui_1010');await fs.mkdir(out,{recursive:true});
+const browser=await chromium.launch({headless:true,channel:'chrome'}),page=await browser.newPage({viewport:{width:1440,height:1000}});
+const errors=[],feedback=[],reconstructed=[];page.on('pageerror',e=>errors.push(e.message));
+const images=await page.evaluate(()=>{
+ const make=(text,color)=>{const c=document.createElement('canvas');c.width=680;c.height=220;const ctx=c.getContext('2d');ctx.fillStyle='white';ctx.fillRect(0,0,680,220);ctx.fillStyle=color;ctx.font='25px sans-serif';ctx.fillText(text,24,48);ctx.strokeStyle=color;ctx.beginPath();ctx.moveTo(40,145);ctx.lineTo(630,145);ctx.stroke();for(let x=60;x<640;x+=95){ctx.beginPath();ctx.moveTo(x,130);ctx.lineTo(x,160);ctx.stroke();}return c.toDataURL('image/png');};
+ return [make('Task: place √3 on the number line.','#503580'),make('Task: compare two marked positions.','#1b787b'),make('Student response: my own drawing.','#bd5164')];
+});
+const [givenFigure,uploadedFigure,studentImage]=images;
+const scene={title:'Student response',objects:[{id:'mark',label:'Student mark',verbatim_text:'',kind:'drawing',bbox:{x:100,y:100,width:100,height:100},glyph:[{kind:'ellipse',points:[{x:0,y:0},{x:1000,y:1000}],filled:false,color:'#503580'}],members:[],origin:'original',confidence:1,evidence:'Student mark',ambiguity:''}],relations:[]};
+const payload=(id,question)=>({scene:structuredClone(scene),record:{id,width:680,height:220,task:question.text},original:studentImage,question,provenance:{}});
+const examples={withfigure:payload('withfigure',{id:'q1',text:'Place √3 on the given number line.',image:givenFigure}),withoutfigure:payload('withoutfigure',{id:'q2',text:'Explain your drawing.'})};
+await page.route('**/api/examples',route=>route.fulfill({json:[{id:'withfigure',title:'Task with figure'},{id:'withoutfigure',title:'Task without figure'}]}));
+await page.route('**/api/examples/*',route=>route.fulfill({json:examples[route.request().url().split('/').at(-1)]}));
+await page.route('**/api/reconstruct',route=>{reconstructed.push(route.request().postDataJSON());return route.fulfill({status:202,json:{id:'mock-figure-upload'}});});
+// Deliberately stale task metadata exercises the client's captured task context boundary.
+await page.route('**/api/jobs/mock-figure-upload',route=>route.fulfill({json:{status:'completed',payload:payload('uploaded',{text:'Stale task metadata',image:givenFigure})}}));
+await page.route('**/api/feedback',route=>{
+ const data=route.request().postDataJSON();feedback.push(data);
+ return route.fulfill({json:{session_id:'figure-fixture',version:feedback.length,drawing_version:1,response_mode:'review',acknowledgment:'Thanks for sharing your diagram.',acknowledgment_ids:[],follow_up:'What does your drawing show?',content:'Thanks for sharing your diagram. What does your drawing show?',focus_ids:[],next_focus_kind:'extension',learning_goal:'Explain how your diagram represents the task.',revision_plan:'',revision_plan_ids:[],edit_enabled:false,awaiting_revision_reason:false,stage:'recognition',talk_move:'recognize_strengths',review:[],criteria:[],visual_action:'none',visual_delivery:'none',mechanism_paths:[],mechanism_condition:''}});
+});
+const upload=async(locator,image,name)=>{await page.locator(locator).setInputFiles({name,mimeType:'image/png',buffer:Buffer.from(image.split(',')[1],'base64')});};
+const select=async id=>{await page.locator('#examples').selectOption(id);await page.waitForFunction(()=>!document.getElementById('submitImage').disabled);};
+const figureReady=async image=>page.waitForFunction(value=>document.getElementById('submissionQuestionImage').getAttribute('src')===value&&!document.getElementById('submitImage').disabled,image);
+try{
+ await page.goto('http://127.0.0.1:8765');await page.locator('#examples option:nth-child(2)').waitFor({state:'attached'});
+ assert(await page.locator('#taskFigure').isVisible());assert(!await page.locator('#submissionQuestionImage').isVisible());
+ await select('withfigure');await figureReady(givenFigure);assert.equal(await page.locator('#submissionPreview').getAttribute('src'),studentImage);
+ assert.equal(await page.locator('#task').inputValue(),'Place √3 on the given number line.');assert.equal(await page.evaluate(()=>currentQuestion().id),'q1');await page.locator('#viewSubmissionTaskFigure').click();assert(await page.locator('#taskFigureDialog').isVisible());assert.equal(await page.locator('#fullTaskFigure').getAttribute('src'),givenFigure);await page.keyboard.press('Escape');
+ await page.screenshot({path:path.join(out,'example_task_figure.png'),fullPage:true});
+ await upload('#taskFigure',uploadedFigure,'task.png');await figureReady(uploadedFigure);
+ assert.equal(await page.locator('#submissionPreview').getAttribute('src'),studentImage);assert.equal(await page.locator('#questionImage').getAttribute('src'),uploadedFigure);assert.equal(await page.evaluate(()=>currentQuestion().id),undefined);
+ await upload('#taskFigure',givenFigure,'replacement.png');await figureReady(givenFigure);
+ await page.locator('#clearTaskFigure').click();assert(!await page.locator('#submissionQuestionImage').isVisible());assert.equal(await page.locator('#submissionQuestionImage').getAttribute('src'),null);assert.equal(await page.locator('#questionImage').getAttribute('src'),null);assert.equal(await page.locator('#taskFigure').inputValue(),'');
+ await upload('#taskFigure',uploadedFigure,'task.png');await figureReady(uploadedFigure);await select('withoutfigure');
+ assert(!await page.locator('#submissionQuestionImage').isVisible());assert.equal(await page.locator('#submissionQuestionImage').getAttribute('src'),null);assert.equal(await page.locator('#taskFigure').inputValue(),'');
+ await select('withfigure');await figureReady(givenFigure);
+ await upload('#file',studentImage,'student.png');await page.waitForFunction(()=>document.getElementById('previewCaption').textContent==='student.png');
+ assert(await page.locator('#submissionQuestionImage').isVisible());assert.equal(await page.locator('#submissionQuestionImage').getAttribute('src'),givenFigure);
+ await upload('#taskFigure',uploadedFigure,'task.png');await figureReady(uploadedFigure);await page.locator('#task').fill('');
+ await page.screenshot({path:path.join(out,'figure_only_submission.png'),fullPage:true});
+ await page.locator('#submitImage').click();await page.locator('#messages .assistant').waitFor();
+ assert.equal(reconstructed.at(-1).image,studentImage);assert.equal(reconstructed.at(-1).question_image,uploadedFigure);assert.equal(reconstructed.at(-1).task,'');
+ assert.equal(feedback.at(-1).question_image,uploadedFigure);assert.equal(feedback.at(-1).task,'');
+ assert.equal(await page.locator('#questionHeading').textContent(),'Task');assert(!await page.locator('#questionImage').isVisible());
+ await page.locator('#questionHeading').click();assert(await page.locator('#questionImage').isVisible());assert.equal(await page.locator('#questionImage').getAttribute('src'),uploadedFigure);assert(!await page.locator('#questionText').isVisible());
+ await page.locator('#viewTaskFigure').click();assert(await page.locator('#taskFigureDialog').isVisible());assert.equal(await page.locator('#fullTaskFigure').getAttribute('src'),uploadedFigure);await page.screenshot({path:path.join(out,'full_task_figure_dialog.png'),fullPage:true});await page.locator('#closeTaskFigure').click();
+ const downloaded=page.waitForEvent('download');await page.locator('#save').click();const download=await downloaded;const exportPath=await download.path();const exported=JSON.parse(await fs.readFile(exportPath,'utf8'));assert.equal(exported.question.image,uploadedFigure);assert.equal(exported.question.text,'');assert.equal(exported.question.id,undefined);
+ assert.equal(await page.locator('#original').getAttribute('src'),studentImage);await page.screenshot({path:path.join(out,'expanded_feedback_task_figure.png'),fullPage:true});
+ await page.setViewportSize({width:390,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await page.screenshot({path:path.join(out,'mobile_task_figure.png'),fullPage:true});
+ await page.locator('#newSubmission').click();await select('withfigure');await figureReady(givenFigure);await page.locator('#clearTaskFigure').click();await page.locator('#submitImage').click();await page.locator('#messages .assistant').waitFor();
+ assert.equal(feedback.at(-1).question_image,'');assert(!await page.locator('#submissionQuestionImage').isVisible());assert.equal(await page.locator('#questionImage').getAttribute('src'),null);assert(!await page.locator('#questionImage').isVisible());assert.equal(await page.locator('#questionContext').getAttribute('open'),null);
+ // Exercise the actual local number-line task figure; provider requests remain intercepted.
+ const actual=await browser.newPage({viewport:{width:1440,height:1000}});actual.on('pageerror',e=>errors.push(e.message));
+ await actual.route('**/api/feedback',route=>route.fulfill({json:{session_id:'math-figure-fixture',drawing_version:1,review:[],content:'What does your construction show?',learning_goal:'Explain your construction on the number line.',stage:'recognition',edit_enabled:false,visual_delivery:'none',visual_action:'none'}}));
+ await actual.route('**/api/reconstruct',route=>route.fulfill({status:500,json:{error:'Reconstruction is mocked in this UI check.'}}));
+ await actual.goto('http://127.0.0.1:8765');await actual.locator('#examples option:nth-child(2)').waitFor({state:'attached'});
+ const math=await actual.locator('#examples option').evaluateAll(options=>options.find(o=>o.value==='math-number-line'||/number.line/i.test(o.textContent))?.value);assert(math,'The local number-line example must be available.');
+ await actual.locator('#examples').selectOption(math);await actual.waitForFunction(()=>!document.getElementById('submitImage').disabled&&document.getElementById('submissionQuestionImage').complete&&document.getElementById('submissionQuestionImage').naturalWidth>0);
+ await actual.screenshot({path:path.join(out,'actual_number_line_submission.png'),fullPage:true});
+ await actual.locator('#submitImage').click();await actual.locator('#messages .assistant').waitFor();
+ const mathLabels=await actual.locator('#canvas .object[data-id^="label_"] text').evaluateAll(nodes=>nodes.map(node=>{const b=node.getBoundingClientRect(),m=node.getScreenCTM();return {text:node.textContent,x:b.x,right:b.right,height:b.height,font:parseFloat(node.getAttribute('font-size')),scaleX:Math.hypot(m.a,m.b),scaleY:Math.hypot(m.c,m.d)};}));
+ assert.equal(mathLabels.length,11);for(const label of mathLabels){assert(label.height>=20,'Number labels must be legible.');assert(Math.abs(label.scaleX-label.scaleY)<.001,'Text glyphs must retain their aspect ratio.');}
+ for(let i=1;i<mathLabels.length;i++)assert(mathLabels[i-1].right<mathLabels[i].x,`${mathLabels[i-1].text} and ${mathLabels[i].text} must not overlap.`);
+ assert(Math.max(...mathLabels.map(label=>label.font))/Math.min(...mathLabels.map(label=>label.font))<1.3,'Single digits must not dwarf the other labels.');
+ await actual.screenshot({path:path.join(out,'actual_number_line_feedback_model.png'),fullPage:true});
+ await actual.locator('#questionHeading').click();await actual.locator('#viewTaskFigure').click();
+ await actual.waitForFunction(()=>document.getElementById('fullTaskFigure').complete&&document.getElementById('fullTaskFigure').naturalWidth>0);
+ assert(await actual.locator('#taskFigureDialog').isVisible());const figureBox=await actual.locator('#fullTaskFigure').boundingBox();assert(figureBox.width>=600&&figureBox.height>=400);
+ await actual.screenshot({path:path.join(out,'actual_number_line_full_task_figure.png'),fullPage:true});await actual.keyboard.press('Escape');assert(!await actual.locator('#taskFigureDialog').isVisible());await actual.close();
+ // The second math sample contains the learner's unworked number line, with no added solution.
+ const math2Out=path.resolve('outputs/math_2_example_1011');await fs.mkdir(math2Out,{recursive:true});
+ const math2=await browser.newPage({viewport:{width:1440,height:1000}}),math2Requests=[];let math2Reconstructions=0;math2.on('pageerror',e=>errors.push(e.message));
+ await math2.route('**/api/feedback',route=>{math2Requests.push(route.request().postDataJSON());return route.fulfill({json:{session_id:'math-2-fixture',drawing_version:1,review:[],content:'Nice work—you drew and labeled a number line. What is your first move for adding the three cards?',learning_goal:'Model the sum of the three cards on a number line.',stage:'recognition',edit_enabled:false,visual_delivery:'none',visual_action:'none'}});});
+ await math2.route('**/api/reconstruct',route=>{math2Reconstructions++;return route.fulfill({status:500,json:{error:'A curated sample must not require reconstruction.'}});});
+ await math2.goto('http://127.0.0.1:8765');await math2.locator('#examples option[value="math-2"]').waitFor({state:'attached'});
+ const sampleResponse=math2.waitForResponse(response=>response.url().endsWith('/api/examples/math-2')&&response.status()===200);await math2.locator('#examples').selectOption('math-2');const sample=await (await sampleResponse).json();
+ await math2.waitForFunction(()=>!document.getElementById('submitImage').disabled&&document.getElementById('submissionQuestionImage').complete&&document.getElementById('submissionQuestionImage').naturalWidth>0&&document.getElementById('submissionPreview').complete&&document.getElementById('submissionPreview').naturalWidth>0);
+ assert(sample.question?.image&&sample.original);assert.notEqual(sample.question.image,sample.original);assert.equal(await math2.locator('#submissionQuestionImage').getAttribute('src'),sample.question.image);assert.equal(await math2.locator('#submissionPreview').getAttribute('src'),sample.original);
+ await math2.screenshot({path:path.join(math2Out,'submission.png'),fullPage:true});await math2.locator('#viewSubmissionTaskFigure').click();await math2.waitForFunction(()=>document.getElementById('fullTaskFigure').complete&&document.getElementById('fullTaskFigure').naturalWidth>0);assert.equal(await math2.locator('#fullTaskFigure').getAttribute('src'),sample.question.image);const math2FigureBox=await math2.locator('#fullTaskFigure').boundingBox();assert(math2FigureBox.width>=600&&math2FigureBox.height>=400);await math2.screenshot({path:path.join(math2Out,'task_figure.png'),fullPage:true});await math2.keyboard.press('Escape');
+ await math2.locator('#submitImage').click();await math2.locator('#messages .assistant').waitFor();assert.equal(math2Requests.length,1);const math2Submission=math2Requests[0];
+ assert.equal(math2Submission.trigger,'submission');assert.equal(math2Submission.source_id,'math-2');assert.equal(math2Submission.task,sample.question.text);assert.equal(math2Submission.question_image,sample.question.image);assert.deepEqual(math2Submission.original_scene,sample.scene);assert.deepEqual(math2Submission.scene,sample.scene);assert.equal(math2Reconstructions,0);assert.equal(math2Submission.scene.relations.length,0);assert(!math2Submission.scene.objects.some(object=>/jump|landing|solution|addition.result/i.test(`${object.id} ${object.kind}`)),'The untouched model must not add solution moves.');
+ const math2Labels=await math2.locator('#canvas .object text').evaluateAll(nodes=>nodes.map(node=>{const b=node.getBoundingClientRect(),m=node.getScreenCTM();return {text:node.textContent,x:b.x,right:b.right,height:b.height,scaleX:Math.hypot(m.a,m.b),scaleY:Math.hypot(m.c,m.d)};}));assert(math2Labels.length>=20);for(const label of math2Labels){assert(label.height>=10,'Number-line labels must be readable.');assert(Math.abs(label.scaleX-label.scaleY)<.001);}for(let i=1;i<math2Labels.length;i++)assert(math2Labels[i-1].right<math2Labels[i].x,`${math2Labels[i-1].text} and ${math2Labels[i].text} must remain distinct.`);
+ assert.equal(await math2.locator('#questionHeading').textContent(),'Task');assert(!await math2.locator('#questionImage').isVisible());assert.equal(await math2.locator('#canvas').getAttribute('data-editable'),'false');assert.equal(await math2.locator('#canvas .flow-arrow').count(),0);await math2.screenshot({path:path.join(math2Out,'feedback_model.png'),fullPage:true});
+ await math2.locator('#questionHeading').click();assert.equal(await math2.locator('#questionImage').getAttribute('src'),sample.question.image);await math2.locator('#viewTaskFigure').click();assert(await math2.locator('#taskFigureDialog').isVisible());await math2.keyboard.press('Escape');await math2.locator('#questionHeading').click();await math2.setViewportSize({width:390,height:844});assert(await math2.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await math2.screenshot({path:path.join(math2Out,'mobile_feedback.png'),fullPage:true});await math2.close();
+ assert.deepEqual(errors,[]);
+ const math2Checks={selectableMath2:true,separateTaskAndStudentImages:true,enlargedTaskFigure:true,initialFeedbackTransport:true,curatedScenePreserved:true,noReconstructionOrInventedJumps:true,readableDistinctLabels:true,taskCollapsed:true,readOnlyInitialModel:true,mobileNoOverflow:true,pageErrors:errors,provider:'mocked browser fixtures'};await fs.writeFile(path.join(math2Out,'browser_checks.json'),JSON.stringify(math2Checks,null,2));console.log(JSON.stringify(math2Checks,null,2));
+ const checks={optionalTaskFigureInput:true,taskFigureSeparateFromStudentImage:true,exampleGivenFigurePreview:true,replaceAndRemoveNoStaleImage:true,exampleSelectionReplacesTaskContext:true,studentUploadPreservesTaskFigure:true,figureOnlyTask:true,reconstructReceivesSeparateImages:true,feedbackSubmissionReceivesFigure:true,capturedContextSurvivesReconstruction:true,compactCollapsedTask:true,expandedTaskShowsFigure:true,explicitClearSentAsEmpty:true,accessibleFullFigureDialog:true,taskFigureIncludedInExport:true,noStaleQuestionId:true,actualNumberLineExampleReadable:true,numberLabelsLegibleAndDistinct:true,textGlyphAspectPreserved:true,mobileNoOverflow:true,pageErrors:errors,provider:'mocked browser fixtures'};
+ await fs.writeFile(path.join(out,'browser_checks.json'),JSON.stringify(checks,null,2));console.log(JSON.stringify(checks,null,2));
+}finally{await browser.close();}

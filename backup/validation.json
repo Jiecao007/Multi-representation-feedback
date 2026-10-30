@@ -1,0 +1,86 @@
+{
+  "date_America_New_York": "2026-10-30",
+  "source_copy": {
+    "files": 408,
+    "bytes": 47925677,
+    "all_sha256_match": true
+  },
+  "credential_scan": {
+    "actual_local_env_secret_values_found": 0,
+    "token_pattern_matches": 0,
+    "env_files_included": false
+  },
+  "local_workspace_learner_python_suite": {
+    "discovered": 304,
+    "passed": 303,
+    "skipped": 1,
+    "note": "Scripted/local transports; no actual model requests."
+  },
+  "isolated_backup_python_suites": [
+    {
+      "pattern": "test_three_agent_*.py",
+      "tests": 34,
+      "passed": 34
+    },
+    {
+      "pattern": "test_initial_knowledge_cache.py",
+      "tests": 8,
+      "passed": 8
+    },
+    {
+      "pattern": "test_simple_knowledge_model_agent.py",
+      "tests": 19,
+      "passed": 19
+    },
+    {
+      "pattern": "test_two_agent_pipeline.py",
+      "tests": 24,
+      "passed": 24
+    }
+  ],
+  "isolated_backup_node": {
+    "files": [
+      "test_prompt_versions.mjs",
+      "test_runner_knowledge.mjs",
+      "test_tutor_record_capture.mjs"
+    ],
+    "tests": 33,
+    "passed": 33
+  },
+  "fresh_path_restore": {
+    "all_assets_resolve_within_restored_checkout": true,
+    "example_count": 10,
+    "http_get_checks": [
+      "/",
+      "/app.js",
+      "/style.css",
+      "/api/examples",
+      "/api/examples/energy-food",
+      "/api/examples/energy-river",
+      "/api/examples/prisms",
+      "/api/examples/electric-field-fast",
+      "/api/examples/energy-river-fast",
+      "/api/examples/sketchjudge-ph007",
+      "/api/examples/sketchjudge-ph020",
+      "/api/examples/sketchjudge-ph036",
+      "/api/examples/math-number-line",
+      "/api/examples/math-2"
+    ],
+    "idempotent_path_helper": true
+  },
+  "paid_model_calls": 0,
+  "excluded_evidence_note": "Full raw historical logs remain local; archive-dependent regression suites are not claimed as validated in the isolated backup.",
+  "inherited_archives_sha256": {
+    "V1.zip": "b0914a4a5c3730cd3f8633413b9870800ed627ebfa058e9e4c7219cb9252267b",
+    "V2.zip": "3a770139b4ddcd33c1cfa20e48e17f3c7f7e35fc07c600b51d3f06ea28c2be30",
+    "V3.zip": "f6219dad8fd8e0b93bfdb02515d6d851994ebfcc1ee49e82d70eb57f4bdf5ec4"
+  },
+  "validation_location_note": "Tests and restore checks ran against the byte-identical source in the original workspace and the complete isolated LOCAL snapshot. The public source-only backup excludes all additional research outputs and example datasets; no claim is made that data-dependent tests run without local resources.",
+  "public_source_only": {
+    "files": 186,
+    "bytes": 2635124,
+    "all_sha256_match": true,
+    "additional_research_outputs_included": false,
+    "additional_datasets_included": false
+  }
+}

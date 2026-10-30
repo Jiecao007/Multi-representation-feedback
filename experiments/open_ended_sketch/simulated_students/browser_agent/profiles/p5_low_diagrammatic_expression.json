@@ -1,0 +1,25 @@
+{
+  "id": "P5",
+  "constructed_profile": true,
+  "interpretation": "Purposefully constructed learner scenario, not an empirically calibrated population profile or a diagnosis of the original drawing's author.",
+  "dimensions": {
+    "task_motivation": {
+      "level": "average"
+    },
+    "feedback_processing": {
+      "level": "average"
+    },
+    "textual_representation": {
+      "level": "average"
+    },
+    "diagrammatic_representation": {
+      "level": "low"
+    },
+    "coordination_translation": {
+      "level": "average"
+    }
+  },
+  "initial_state_source": "Shared case_config.initial_conceptual_state (categorical misconception_type and knowledge_components) and case_config.initial_explanation.",
+  "dimension_definitions": "profile_dimensions.json; student_model.py expands selected levels for motivation, feedback uptake, and the three components of representation ability, plus the shared case misconception category.",
+  "behavioral_scope": "Tendencies only. No guaranteed outcome, scripted mistakes, forced message count, or forced stopping. Any profile may learn or fail to complete the task."
+}

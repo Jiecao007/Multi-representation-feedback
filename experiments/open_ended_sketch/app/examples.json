@@ -1,0 +1,95 @@
+[
+  {
+    "id": "energy-food",
+    "title": "Food, water & energy",
+    "run": "results/20260922T035929331824Z",
+    "sample": "pic1",
+    "labels": {
+      "o1": "Energy (left)",
+      "o2": "Water (left)",
+      "o3": "Food production",
+      "o4": "Food transport",
+      "o5": "Food preparation",
+      "o6": "Transport / preparation",
+      "o7": "Water (above)",
+      "o8": "Energy (above)",
+      "o9": "Food consumption",
+      "o10": "Gain energy",
+      "o11": "Waste = lost energy",
+      "o12": "Water (below)"
+    }
+  },
+  {
+    "id": "energy-river",
+    "title": "A river and its connections",
+    "run": "results/20260922T035929331824Z",
+    "sample": "pic2",
+    "labels": {
+      "river": "River",
+      "dam": "Dam mark",
+      "upper_water_branch": "Upper water branch",
+      "lower_water_branch": "Lower water branch",
+      "dark_column": "Dark column",
+      "house": "House-like shape",
+      "windmill_shape": "Windmill-like shape",
+      "plant_marks": "Plant-like marks",
+      "animal_shape": "Animal-like shape",
+      "rear_tall_frame": "Tall frame at back",
+      "front_window_building": "Front building with windows",
+      "middle_low_building": "Lower middle frame",
+      "right_tall_building": "Tall right building",
+      "radiating_mark": "Radiating marks",
+      "ground_line": "Ground line",
+      "upper_spatial_group": "Upper group",
+      "lower_spatial_group": "Lower group"
+    }
+  },
+  {
+    "id": "prisms",
+    "title": "Prisms & shaded faces",
+    "run": "results/20260923T042443334511Z",
+    "sample": "prisms"
+  },
+  {
+    "id": "electric-field-fast",
+    "title": "Electric field · fast reconstruction",
+    "run": "results/20260923T055418890567Z",
+    "sample": "drawing"
+  },
+  {
+    "id": "energy-river-fast",
+    "title": "River & buildings · fast reconstruction",
+    "run": "results/20260923T055456775865Z",
+    "sample": "pic2"
+  },
+  {
+    "id": "sketchjudge-ph007",
+    "title": "PH_007 · Parallel circuit design",
+    "run": "results/curated_ph007_ans_02",
+    "sample": "PH_007_ans_02"
+  },
+  {
+    "id": "sketchjudge-ph020",
+    "title": "PH_020 · Forces on a trolley",
+    "run": "results/20260923T060120537786Z",
+    "sample": "PH_020_ans_04"
+  },
+  {
+    "id": "sketchjudge-ph036",
+    "title": "PH_036 · Light through two lenses",
+    "run": "results/20260923T060122390014Z",
+    "sample": "PH_036_ans_02"
+  },
+  {
+    "id": "math-number-line",
+    "title": "Math · Integer addition on a number line",
+    "run": "results/curated_math_number_line",
+    "sample": "math-number-line"
+  },
+  {
+    "id": "math-2",
+    "title": "Math · Number-line setup",
+    "run": "results/curated_math_2",
+    "sample": "math-2"
+  }
+]

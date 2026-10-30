@@ -1,0 +1,26 @@
+{
+  "source_project": "/Users/jiecao/Library/CloudStorage/OneDrive-UniversityofNorthCarolinaatChapelHill/26 Spring/Indepentent study/Ha/BJET_feedback_26/outputs/mechanics-feedback-demo",
+  "operation": "read-only snapshots for provenance; original project untouched",
+  "files": [
+    {
+      "original_path": "/Users/jiecao/Library/CloudStorage/OneDrive-UniversityofNorthCarolinaatChapelHill/26 Spring/Indepentent study/Ha/BJET_feedback_26/outputs/mechanics-feedback-demo/lib/talk-moves.ts",
+      "snapshot_path": "draw2interaction/legacy_reference/lib__talk-moves.ts",
+      "sha256": "73f0947dcd0a185e8be71e8ed3bf3e7f564135c7f5fbb1341a8e2b3e2a9628f6"
+    },
+    {
+      "original_path": "/Users/jiecao/Library/CloudStorage/OneDrive-UniversityofNorthCarolinaatChapelHill/26 Spring/Indepentent study/Ha/BJET_feedback_26/outputs/mechanics-feedback-demo/lib/review-boundary.ts",
+      "snapshot_path": "draw2interaction/legacy_reference/lib__review-boundary.ts",
+      "sha256": "cfc1466e826c638c89fa17631a3808ba959e9b133d155358e384d698d3740ea1"
+    },
+    {
+      "original_path": "/Users/jiecao/Library/CloudStorage/OneDrive-UniversityofNorthCarolinaatChapelHill/26 Spring/Indepentent study/Ha/BJET_feedback_26/outputs/mechanics-feedback-demo/lib/feedback-workflow.ts",
+      "snapshot_path": "draw2interaction/legacy_reference/lib__feedback-workflow.ts",
+      "sha256": "5ddc635dbe84f057d18363b01f7fdda2786257179de30e4f7d15976187ed8b92"
+    },
+    {
+      "original_path": "/Users/jiecao/Library/CloudStorage/OneDrive-UniversityofNorthCarolinaatChapelHill/26 Spring/Indepentent study/Ha/BJET_feedback_26/outputs/mechanics-feedback-demo/app/api/chat/route.ts",
+      "snapshot_path": "draw2interaction/legacy_reference/app__api__chat__route.ts",
+      "sha256": "594c5c327ccb76f80b68ec448739e14ebc69f9fdd39aa915e4cf24ff8e6f2d81"
+    }
+  ]
+}

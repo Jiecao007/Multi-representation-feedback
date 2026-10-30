@@ -1,0 +1,771 @@
+{
+  "format": "current-system-source-only-backup-v1",
+  "created_at": "2026-10-30T19:16:29.114812+00:00",
+  "backup_date_America_New_York": "2026-10-30",
+  "repository": "https://github.com/Jiecao007/Multi-representation-feedback",
+  "base_commit": "8f9a9c6",
+  "runtime_knowledge_format": "knowledge-model-agent-v4",
+  "runtime_projection": "two-agent-cached-initial-knowledge-v6",
+  "five_profile_binary_design_applied_to_runtime": false,
+  "copy_policy": "All listed source files are copied byte-for-byte. No runtime source, prompt, profile or recorded result is edited.",
+  "branch": "backup/system-source-2026-10-30",
+  "tag": "system-source-backup-2026-10-30",
+  "scope": "Executable source, UI assets, prompts, schemas, profile/configuration files, test scripts, project handoff and integration/launch notes. No additional research outputs or example datasets.",
+  "exclusions": [
+    "All credentials and .env files",
+    "All data/ and outputs/ directories",
+    "All experiment results/, inputs/, app/runs/ and tests/fixtures/ directories",
+    "Installed dependencies and Python caches",
+    "Unrelated research documents, recordings and old system copies"
+  ],
+  "restoration_note": "Restore source over the existing local project to retain its original datasets/results. A fresh clone can run the server and accept new uploads, but built-in examples and evidence-dependent tests require the excluded local resources.",
+  "historical_test_note": "Validation was performed with the exact matching source in the original workspace/full isolated local snapshot. The public source-only snapshot omits data-dependent test fixtures.",
+  "files": {
+    "AGENTS.md": {
+      "bytes": 1254,
+      "sha256": "a3168f73cbada5bf8697c1b7cf77c97a68402b4d4b9d767b3a15f552206b9d7b"
+    },
+    "draw2interaction/INTEGRATION.md": {
+      "bytes": 10972,
+      "sha256": "e6fa1f2222d98f635c8e3cdcb5fc02526bf3046441e5d398e9c044aa62eba49e"
+    },
+    "draw2interaction/README.md": {
+      "bytes": 13888,
+      "sha256": "6dc0e319a26534ed46ab08736fdff00f91bb50cceece90227297fc926dc42d89"
+    },
+    "draw2interaction/WORKFLOW_1010.md": {
+      "bytes": 14009,
+      "sha256": "52f3b4d4c552b6f6920121a95c833ead506beac6631d0b37e2ee95116b0ac2a4"
+    },
+    "draw2interaction/legacy_reference/app__api__chat__route.ts": {
+      "bytes": 5729,
+      "sha256": "594c5c327ccb76f80b68ec448739e14ebc69f9fdd39aa915e4cf24ff8e6f2d81"
+    },
+    "draw2interaction/legacy_reference/lib__feedback-workflow.ts": {
+      "bytes": 4173,
+      "sha256": "5ddc635dbe84f057d18363b01f7fdda2786257179de30e4f7d15976187ed8b92"
+    },
+    "draw2interaction/legacy_reference/lib__review-boundary.ts": {
+      "bytes": 1293,
+      "sha256": "cfc1466e826c638c89fa17631a3808ba959e9b133d155358e384d698d3740ea1"
+    },
+    "draw2interaction/legacy_reference/lib__talk-moves.ts": {
+      "bytes": 18999,
+      "sha256": "73f0947dcd0a185e8be71e8ed3bf3e7f564135c7f5fbb1341a8e2b3e2a9628f6"
+    },
+    "draw2interaction/legacy_reference/manifest.json": {
+      "bytes": 1843,
+      "sha256": "bc10a26062a6bceaf811217e26f64573a1be13bdebcf7e6717a522e302b4811b"
+    },
+    "draw2interaction/start.command": {
+      "bytes": 220,
+      "sha256": "e0e6aacea9d7a022b9aa57d5bac63488894cd729d3fa371ae76f7770a10f3700"
+    },
+    "experiments/open_ended_sketch/FEEDBACK_LOGIC.md": {
+      "bytes": 26195,
+      "sha256": "fd1be6657ef3efb424423cac408c0f9e6baf43f92e837c384a41547ff417aa9d"
+    },
+    "experiments/open_ended_sketch/README.md": {
+      "bytes": 14200,
+      "sha256": "227c5ea9c428f8ecebc2fc809ddb4d3c8f1214e37ec4703d5507a07a2fe1b68b"
+    },
+    "experiments/open_ended_sketch/app/agent_api.py": {
+      "bytes": 3018,
+      "sha256": "51e84002884a5fc2e16c1ca962cc1df596b3c2ff97ae9d75eb306cc361c00aa2"
+    },
+    "experiments/open_ended_sketch/app/agent_types.py": {
+      "bytes": 7065,
+      "sha256": "1405bf5c243f5ee2d3f0fb678c8d99dc221195c19397d94f07d4b3b633642167"
+    },
+    "experiments/open_ended_sketch/app/app.js": {
+      "bytes": 56673,
+      "sha256": "610fb6b42e5f250dbf4a035a1a781a3ff59bc28cb2bd03508e2b2145e9c6b0f2"
+    },
+    "experiments/open_ended_sketch/app/avatars/student.svg": {
+      "bytes": 871,
+      "sha256": "77211d03967020f2c53901631bedad4e0fa0e9238a2e36effd9a9436692a4265"
+    },
+    "experiments/open_ended_sketch/app/avatars/tutor.svg": {
+      "bytes": 1068,
+      "sha256": "acd80e697df33a7b33410664e468fc885e77c05e3a9363c7449c6d040c2ac828"
+    },
+    "experiments/open_ended_sketch/app/case_export.js": {
+      "bytes": 30420,
+      "sha256": "41473f63396c31a2edfef69d5c69bb71f2e32ed5523eb632b5a61795e714cf29"
+    },
+    "experiments/open_ended_sketch/app/case_resume.py": {
+      "bytes": 2738,
+      "sha256": "b889d547ee160bb409f18f3f6d0937a24f790a206de2409b5f4894d71745ba23"
+    },
+    "experiments/open_ended_sketch/app/catalog.json": {
+      "bytes": 18223,
+      "sha256": "07b2d7f7dcfb3cac7e97f1342296a3f439f6651306ab76a2d74419625a169836"
+    },
+    "experiments/open_ended_sketch/app/editor.js": {
+      "bytes": 5547,
+      "sha256": "88a03fedef74476a7393a0f037ad4706d5fee5ef8c1155804d72e77ee6a1e49f"
+    },
+    "experiments/open_ended_sketch/app/evaluation_agent.py": {
+      "bytes": 1090,
+      "sha256": "612c965e270734cdd512f4ddcfcd0c97b8e10bc1bb6b3c62ece24154dd5e1593"
+    },
+    "experiments/open_ended_sketch/app/examples.json": {
+      "bytes": 2694,
+      "sha256": "4d8591266e58383529837dbf380f246652f1671c66aed481544f43555b15c580"
+    },
+    "experiments/open_ended_sketch/app/feedback.py": {
+      "bytes": 20934,
+      "sha256": "0134aea897831a208485f0dfaf93d7591c86866aa6cbacdbddb76dc9ae036c6c"
+    },
+    "experiments/open_ended_sketch/app/feedback_process.py": {
+      "bytes": 19778,
+      "sha256": "1f844e43a586ad234356a517a12a22a011a6a1954c2e87341ed229e23e1634d8"
+    },
+    "experiments/open_ended_sketch/app/geometry.js": {
+      "bytes": 8958,
+      "sha256": "b53d1394d8fbcea7d7d108054ff3427fe7467c0e790740b59d80b81d45b6f6bc"
+    },
+    "experiments/open_ended_sketch/app/highlight_plan.py": {
+      "bytes": 3580,
+      "sha256": "a377ff22765926abcf9e0e08d1d69a5eaefee29e131085e5b90f8bd6db33aef7"
+    },
+    "experiments/open_ended_sketch/app/index.html": {
+      "bytes": 10488,
+      "sha256": "3aed7e4047fd77c46020a273bc2988c03e62a92e619c257cb2c0d28cc9b43568"
+    },
+    "experiments/open_ended_sketch/app/interaction_contract.py": {
+      "bytes": 14485,
+      "sha256": "0087ceac8e9bf67bfb117292aee0fb404da43a65eba1bf9ddb67582a8634a53b"
+    },
+    "experiments/open_ended_sketch/app/learner_model.py": {
+      "bytes": 11016,
+      "sha256": "e82617e880ae0187dca91cc51a6448c667ac4d56e23cf97b0bc4f2a45c1bf82d"
+    },
+    "experiments/open_ended_sketch/app/mechanism.js": {
+      "bytes": 1726,
+      "sha256": "1a1972981f75092ab39d525543c94e53bdf45cfe7359d77dbce1b69e1c50a7f2"
+    },
+    "experiments/open_ended_sketch/app/move_selection.py": {
+      "bytes": 11654,
+      "sha256": "dbfbaad2d613ee46c16de1b509bd9ae89deee9b983c0d7965832119e019aa151"
+    },
+    "experiments/open_ended_sketch/app/revision_target.py": {
+      "bytes": 7999,
+      "sha256": "548c951d73c932eeeb091fea7ca546d3802f89be5b5d87dd2e211d5888624745"
+    },
+    "experiments/open_ended_sketch/app/server.py": {
+      "bytes": 15658,
+      "sha256": "ea4618f46cd9e38828e616a9be0819fab6643db2a67b030ef4c491d6eb729f59"
+    },
+    "experiments/open_ended_sketch/app/style.css": {
+      "bytes": 29679,
+      "sha256": "62c5b46e36fb9b7a1297e283bbc18d960bbf176207c43433196501cf1d7d889d"
+    },
+    "experiments/open_ended_sketch/app/transformation_agent.py": {
+      "bytes": 1757,
+      "sha256": "9b566afdacadf7d878d616b7a24e458c81fdf01b0a0a7e62d843e6b8f5f28d54"
+    },
+    "experiments/open_ended_sketch/app/tutor_agent.py": {
+      "bytes": 6219,
+      "sha256": "96b49a99dd0dc9381318e862e2a6afabe846259ba075c4df57740c519c283fae"
+    },
+    "experiments/open_ended_sketch/app/tutor_context.py": {
+      "bytes": 6561,
+      "sha256": "0e3a87ef471880f52cbc229429480a821ae132308f5bfdbb313e61533b251a9f"
+    },
+    "experiments/open_ended_sketch/app/workflow.js": {
+      "bytes": 2564,
+      "sha256": "6aa1c50d1ae149633f56c99433df7b2b66c75845ebdfbd76f69bbe28e3b29e39"
+    },
+    "experiments/open_ended_sketch/compact.py": {
+      "bytes": 4043,
+      "sha256": "35356e3382da6cd6cc76afb99fa4f4827ef5da94cabfc8f9c8a9a070835a870f"
+    },
+    "experiments/open_ended_sketch/graph.js": {
+      "bytes": 1640,
+      "sha256": "a809953d75cb6679d05bde3090b56c3e3ba91e6cceef3f26d611aca91e9f49bc"
+    },
+    "experiments/open_ended_sketch/preview.py": {
+      "bytes": 4186,
+      "sha256": "4ec388b3b398265aa6b449754fab414a66b58ee16d96ef8e0666d4f204b8e4e3"
+    },
+    "experiments/open_ended_sketch/prompts/chat.md": {
+      "bytes": 1703,
+      "sha256": "f4c52ff95f09e1d8117dccc0ed362df8e06291ebe2a712d236b97535c3e572d8"
+    },
+    "experiments/open_ended_sketch/prompts/feedback_evaluator.md": {
+      "bytes": 8691,
+      "sha256": "7cb050e916e3340f6a2e9c8519daca6d0ee361545dc358440a2df73949c0170e"
+    },
+    "experiments/open_ended_sketch/prompts/feedback_move_examples.md": {
+      "bytes": 7437,
+      "sha256": "0229835bb9dbaa834131f7831f7f178e147458be48d167416c1fc2507f86718d"
+    },
+    "experiments/open_ended_sketch/prompts/feedback_tutor.md": {
+      "bytes": 10951,
+      "sha256": "973f45ae55c181662de9eebd84755f1a3505fb63dac095a34f4f4d772d53ae38"
+    },
+    "experiments/open_ended_sketch/prompts/reconstruct.md": {
+      "bytes": 7730,
+      "sha256": "41580d6eafd16089d6d404e5a2e1e3800d5899b8fe77b87e3f8921c2b76cedc8"
+    },
+    "experiments/open_ended_sketch/prompts/reconstruct_v1.1.md": {
+      "bytes": 8331,
+      "sha256": "c1e45836a3a6426adcd67b801c66121779219bddac766a3261f2d81c3f021d4e"
+    },
+    "experiments/open_ended_sketch/prompts/reconstruct_v1.2_compact.md": {
+      "bytes": 6257,
+      "sha256": "fb0e2565b66b125543844f0e57cde995345ee3f583c4058ffc280f7d0359487d"
+    },
+    "experiments/open_ended_sketch/reconstruction.py": {
+      "bytes": 706,
+      "sha256": "b72e628a7c34b7f3389e9e6ad848947cd344ead4405182197885e13bfde77a83"
+    },
+    "experiments/open_ended_sketch/render.py": {
+      "bytes": 3332,
+      "sha256": "85fd959a3ca84034a871a438e91d308455a64ec9879701bc4873084a5f82559a"
+    },
+    "experiments/open_ended_sketch/requirements.txt": {
+      "bytes": 69,
+      "sha256": "8eaaeaf31fba21208ec5fc4dc31d38fb377723eb20195e98aad8d4eb959470e1"
+    },
+    "experiments/open_ended_sketch/run.py": {
+      "bytes": 8110,
+      "sha256": "80a9ac4a1ce0d33789989dc897cc8e711fc40df747685f364a98520b88cd94d0"
+    },
+    "experiments/open_ended_sketch/schema.py": {
+      "bytes": 3427,
+      "sha256": "acbddc3734db706ac960de54f84df3ead6489241e542e99c782ee50a485f592b"
+    },
+    "experiments/open_ended_sketch/simulated_students/SIMULATED_LEARNERS.md": {
+      "bytes": 293121,
+      "sha256": "114150681334a9256a2a329fed6574e65672e509601374e70a4ce73c5f0ffad8"
+    },
+    "experiments/open_ended_sketch/simulated_students/analysis/input_compaction_20261021.json": {
+      "bytes": 20896,
+      "sha256": "6de9b632a490cce5dfc29c47c9f518d9c9878b5fc5508e52b95762aa76139528"
+    },
+    "experiments/open_ended_sketch/simulated_students/analysis/token_cost_20261021.json": {
+      "bytes": 57481,
+      "sha256": "9db9f9b448cebb32f171b174799af785724ba21fff31bdfa4c654de96b4b2970"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/README.md": {
+      "bytes": 39844,
+      "sha256": "fa701e23912b34e9655fc95781b4d9a974df69eda533d11d2cf79f93e8fa5dd9"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/browser_driver.mjs": {
+      "bytes": 23754,
+      "sha256": "20effb4984b642f6e3e5a2b8efa864d0496b7816cce768f5b0b03b25055c883a"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/case_requests/response_request.template.json": {
+      "bytes": 334,
+      "sha256": "8fd9f415095c376373497baa6cd1be224085c9d6fd63b80db49674db2a345590"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/cases/math_2_numberline.json": {
+      "bytes": 9413,
+      "sha256": "e9de7b1c4bb65e990aa3d9aa4d9566cc88d5165e063e79249317d423e5387bf1"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/compare_profiles.py": {
+      "bytes": 18356,
+      "sha256": "1fcd2a1535eee691d3c1246f6254238e2f7d89221c81967fa89d884932974fba"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/initial_knowledge_cache.py": {
+      "bytes": 3619,
+      "sha256": "f4267ddb48922d54b7f437ab459dc3dee53fe47ffa4ff40d954a8cf6e5dbb93f"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/knowledge_gate_prompt.md": {
+      "bytes": 5381,
+      "sha256": "e48f76dc99c543e1e059035711b2a774abfdc9dc095e46d6bf3754567612bb2d"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/knowledge_model_agent.py": {
+      "bytes": 12538,
+      "sha256": "965ede859edfaa4122a26e61f0283783058609efc7c457990fd74a0a0a9bf5da"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/knowledge_model_agent_prompt.md": {
+      "bytes": 1642,
+      "sha256": "b4a5d21c0e3365f3e503480534e4204c05633edffca976cccd83f264b13d1acd"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/knowledge_model_agent_scoped_v3.py": {
+      "bytes": 46829,
+      "sha256": "7956355de051afb7e73dedd308c29be38b2ababd7953e1db8a724669363d79de"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/learner_grounding.py": {
+      "bytes": 4669,
+      "sha256": "b531d9e5b7a3f3966ede4c19bf1cecb7f3711b2069871f1198bdd839fa34185a"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/learner_knowledge.py": {
+      "bytes": 23487,
+      "sha256": "d250caf93fa0f127ff42a87c8a0de66f6fee1d6ed67ec49f828d1edca7dc1a6a"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/learning_observer_prompt.md": {
+      "bytes": 5159,
+      "sha256": "ad7dcf22651cc32c28f75bb2e7772a9da5e2638f33fc443189f7a59bb3eb0852"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/matched_contexts.py": {
+      "bytes": 22672,
+      "sha256": "1c94cf4395a4a07a63314747c36cd32e64204e673b1f8824c1dae993a2d92a92"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/prepare_case.py": {
+      "bytes": 16711,
+      "sha256": "7c45a4f79edf4d25752758ece05102ce049f8167594871953687b09d24fca723"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/prior_analysis_prompt.md": {
+      "bytes": 5639,
+      "sha256": "f511b5140fbfa35512dcae23ea1c841044f87e603e985a81c09f052bd2f371ba"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/prior_analysis_types.py": {
+      "bytes": 17691,
+      "sha256": "c43398287b18c5a1e5904ac9662e9888d754f7908fa4cca37082760e19b7409c"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/profile_dimensions.json": {
+      "bytes": 27019,
+      "sha256": "f5501f0a75984b27045e4d4f571866f17d018da00936031d8d61b1d741319e70"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/profile_prompt.py": {
+      "bytes": 3637,
+      "sha256": "98de413a67bfd5c42e75a1b4ee5490719e55c92a4e53cf06785d6198f9215865"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/profiles/p1_average.json": {
+      "bytes": 1123,
+      "sha256": "911d0929ce82deb98de28a7411073b36fbbbeae23e48aa7f39e4250d293481b2"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/profiles/p2_low_motivation.json": {
+      "bytes": 1119,
+      "sha256": "043a5bdc52e4c05ed8c32d6d8ba7c55aab71ea1c7d6a7a4356ddab41bda98ca0"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/profiles/p3_low_feedback_uptake.json": {
+      "bytes": 1119,
+      "sha256": "3d305a54116ed147268417519d65d0f275d489f10315bf94c1d9d78caa1b6b6b"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/profiles/p4_low_textual_expression.json": {
+      "bytes": 1119,
+      "sha256": "97ad38ee014c3d03918426111c3e5880daf687a92063fc867adcf9a630e0282b"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/profiles/p5_low_diagrammatic_expression.json": {
+      "bytes": 1119,
+      "sha256": "1bc5c8e5d29336fb79a90a90cb372efd7d7ef8f4b7e8b005bf9024f32dd837cc"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/profiles/p6_low_coordination_translation.json": {
+      "bytes": 1119,
+      "sha256": "9e36ead531d7a568756481a3fe908581bff0b59eb349aaeed03ff6aa413190a9"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/profiles/p7_combined_support_needs.json": {
+      "bytes": 1103,
+      "sha256": "659f9da887c8dbfee9c9cc1bd67e61f0a520069c15de4589887b0d964b781a2e"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/prompt_versions.mjs": {
+      "bytes": 39224,
+      "sha256": "a69776691f26e08e3efdffd9393be210b7de9bebd50a2a446bdf8a4cddfe207c"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/run.mjs": {
+      "bytes": 42399,
+      "sha256": "1ea4577cc10dcdb5f923c2263c0d4030067050d0d7b31ed17178c69813ce019d"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/student_model.py": {
+      "bytes": 54044,
+      "sha256": "cd000f58c7b2e80462d7495accd80fa3baacc43e2eba31aff927cdb4005b7163"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/student_model_legacy.py": {
+      "bytes": 47372,
+      "sha256": "19900db44f05c79466bfdb7f4c6be62d8ea5ff5e290a0fdaae9f85f14aa42345"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/student_prompt.md": {
+      "bytes": 9554,
+      "sha256": "e1bfcc5f613c91c9016c76e333c16027809ebfeed2cb9563ae6553b94cfe6625"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_contracts.py": {
+      "bytes": 22028,
+      "sha256": "4f1949916d63f5f05c148b02845fdca40d4796c2af5f4831032ba181c0518acd"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_extended_profiles.py": {
+      "bytes": 4331,
+      "sha256": "a08e77ad2bdc84dc5da22700e32a75113cc844631d4a45d05d590a94c317ee69"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_hint_browser.mjs": {
+      "bytes": 5871,
+      "sha256": "dfaa1ecc5cbadfc35a68a98f58aab00c58604f8b3ca35fd40510b3127ad121d7"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_initial_knowledge_cache.py": {
+      "bytes": 6971,
+      "sha256": "7224ebc3f58a7599ed7c8208cbfa069973e78163ed8e1b263662e03fb4030fbb"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_input_compaction.py": {
+      "bytes": 23406,
+      "sha256": "3891e4ff3abffc542cae41e147435366fe9362a86ea2a2292f742c6bca1677d4"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_knowledge_model_agent.py": {
+      "bytes": 39438,
+      "sha256": "218de9865104c94a2b4396d8b4916bbc7029bff30d277dea1cc5117bad78f97d"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_learner_grounding.py": {
+      "bytes": 13985,
+      "sha256": "686e0f46f62d91eb02b9f291978a91cce85e6593d1e45137e968ab03614d16b7"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_learner_knowledge.py": {
+      "bytes": 27776,
+      "sha256": "fd77d998147aa264a4645e20cffab87c37c21837cf1cdc928e5e3f1b20b33a91"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_matched_contexts.py": {
+      "bytes": 10450,
+      "sha256": "180359b64f18f1e6f43f813b4faaf9c351c080a2c885b36f3ce02b9b35d025b5"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_prepare_case.py": {
+      "bytes": 24484,
+      "sha256": "90dd46954f0f8be09547bebddb4f4e592eea51f705e12144cbd144acd4e08113"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_prior_analysis_types.py": {
+      "bytes": 19114,
+      "sha256": "527ab9230d389be326ee82039dd0866b755d9f48401a0b59262b56ac4c3c2142"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_profile_prompt.py": {
+      "bytes": 11053,
+      "sha256": "bcfa30f628db182c61741de0ca82fbe47140c573a045d081372c365aa0acbe6c"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_prompt_versions.mjs": {
+      "bytes": 34576,
+      "sha256": "4225c1fe8394cadcfa24bc282dcbd4ed48afd3473260c4f138e4c30e58bee587"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_response_grounding.py": {
+      "bytes": 14792,
+      "sha256": "f87fcc12d3e3908712190a0526d5cbe71a1f4aca0bc77a516600019fc55952b7"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_response_prior.py": {
+      "bytes": 7063,
+      "sha256": "392d8fe99d554ded2e31767da7ab025901e9020798487a09b1928a73b8f43b7c"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_runner_knowledge.mjs": {
+      "bytes": 17592,
+      "sha256": "12fdae5171cde469051edbe602fc67224b40cbfd2db2dfd978d95bc9b57d72db"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_runner_prepare.mjs": {
+      "bytes": 7417,
+      "sha256": "b387ef0037dee691e6913a991f8c703bfd5200de9cd76b6f9be7e03eba4ee721"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_simple_knowledge_model_agent.py": {
+      "bytes": 10337,
+      "sha256": "6e9221943926cb511943ac2d15a3d938db2577586800b2df067b3b0ee6849724"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_student_knowledge_pipeline.py": {
+      "bytes": 22078,
+      "sha256": "e7f1fcbf4d5153795f951e8c9d51f2b2201ef151fea82c76a6ca8ca2d4e5388c"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_submission_browser.mjs": {
+      "bytes": 3978,
+      "sha256": "52554c8609740645ad6ec9f4e8a59e1f4b81aead32804f2ab9b985f2fdfaf9c3"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_tutor_record_capture.mjs": {
+      "bytes": 2102,
+      "sha256": "2b0d8c26f56892a15284befa16edd66fd27c746dea172c26db53c7dd5ffdb5fa"
+    },
+    "experiments/open_ended_sketch/simulated_students/browser_agent/test_two_agent_pipeline.py": {
+      "bytes": 25181,
+      "sha256": "479b69bbfe632eedc7230f7b12ce6c11cdfcbf7f221b2eda2deb80b702c0fdcd"
+    },
+    "experiments/open_ended_sketch/simulated_students/profile_ph007.json": {
+      "bytes": 1933,
+      "sha256": "1577628aaf76a09b8756455595712923c35b1fe64c53f22adfd6bae1f496a14b"
+    },
+    "experiments/open_ended_sketch/simulated_students/run.py": {
+      "bytes": 17291,
+      "sha256": "ad8b89778a950b4c4cf402d53c0f73da9bfd4dda2b6b4d51754fece876789fb5"
+    },
+    "experiments/open_ended_sketch/simulated_students/student_action.cjs": {
+      "bytes": 3151,
+      "sha256": "092ed4a108cde3ecccf3699467a7d2c2c84ab6617ef1398f88fd37ef6ae5f23b"
+    },
+    "experiments/open_ended_sketch/simulated_students/student_prompt.md": {
+      "bytes": 2530,
+      "sha256": "846ce148852f89dc460bf27e5b67a676e294a51cbd52900491adecefbe02371c"
+    },
+    "experiments/open_ended_sketch/tests/README.md": {
+      "bytes": 1458,
+      "sha256": "21fe3e6f2ff837a40ad162704cce9995196050b771a06ad4a7a0354f87bb4071"
+    },
+    "experiments/open_ended_sketch/tests/browser_check.mjs": {
+      "bytes": 5557,
+      "sha256": "416da6ea72aa9bdbabc2d3b5c683d8a4908e1e92b1954e609113a6ecf5cdea29"
+    },
+    "experiments/open_ended_sketch/tests/legacy_support/__init__.py": {
+      "bytes": 75,
+      "sha256": "831e77d8f24c327631d8259e7b38febc1565b8b40cf7e0a5ad1932d141a68adc"
+    },
+    "experiments/open_ended_sketch/tests/legacy_support/dialogue_context.py": {
+      "bytes": 2224,
+      "sha256": "5d602bde0e31ece41bc893d772578f183c57f4a84078f851ed4a439b43de26e2"
+    },
+    "experiments/open_ended_sketch/tests/legacy_support/feedback.py": {
+      "bytes": 44890,
+      "sha256": "7d38e7915996b2d4d50523df99552a86db03140adfd1267e362dd7b463721555"
+    },
+    "experiments/open_ended_sketch/tests/legacy_support/feedback_policy.py": {
+      "bytes": 35526,
+      "sha256": "8c35f02f4fc4c4dbd638bfcdc03009ded4567ab94dae5f4b773eff3b7d20ac6f"
+    },
+    "experiments/open_ended_sketch/tests/legacy_support/feedback_types.py": {
+      "bytes": 6344,
+      "sha256": "90d57e68d9d76cccdce120e49664771d556318f0f554d3a18b15e58762147ac1"
+    },
+    "experiments/open_ended_sketch/tests/legacy_support/prompts/feedback_dialogue.md": {
+      "bytes": 1195,
+      "sha256": "89a5dc70cd953fef887ab0c4887c3de7786fc300fded6227da62558846e1d3a5"
+    },
+    "experiments/open_ended_sketch/tests/legacy_support/prompts/feedback_evaluator.md": {
+      "bytes": 12827,
+      "sha256": "13e6b08a9f966c16ffaaae13ea3d4c0cce3880c803f070c0efb59777f9888f6e"
+    },
+    "experiments/open_ended_sketch/tests/legacy_support/prompts/feedback_examples.md": {
+      "bytes": 9505,
+      "sha256": "862070cb514ec4f337b0703d36cbbd61d07c245a9b61f7b72ac6a985a2863de3"
+    },
+    "experiments/open_ended_sketch/tests/legacy_support/prompts/feedback_fast_dialogue.md": {
+      "bytes": 9741,
+      "sha256": "6ca6376fe960f41d4e9eceb67b6dd373c3acdc1b7ac9e005254ab5a2e151b617"
+    },
+    "experiments/open_ended_sketch/tests/legacy_support/prompts/feedback_tutor.md": {
+      "bytes": 11802,
+      "sha256": "bd4a1dd61e29f0b12fdcd3502470d4c1a345ae57290b5368b2b4b44fcedce422"
+    },
+    "experiments/open_ended_sketch/tests/legacy_support/reply_format.py": {
+      "bytes": 1224,
+      "sha256": "461446b7af05839a8a786d48fb18d2a6f62fb2e8fa5368e639c4463a1f90efb3"
+    },
+    "experiments/open_ended_sketch/tests/legacy_support/visual_feedback.py": {
+      "bytes": 5969,
+      "sha256": "395c231d548f4b5f9af0aa8d3f25d2873cf27aaf13bf3b33714c4030a9da42b0"
+    },
+    "experiments/open_ended_sketch/tests/live_dialogue_continuation_check.py": {
+      "bytes": 1701,
+      "sha256": "27efd3714f0b1f2b6a10210a0abba526c5fd0b8533ed167d15e127d9dd4e8742"
+    },
+    "experiments/open_ended_sketch/tests/live_fast_dialogue_check.py": {
+      "bytes": 1925,
+      "sha256": "b0df5cafb5c6f93588038aac1902d957d0d9a95d53a532588a24a5397334f71f"
+    },
+    "experiments/open_ended_sketch/tests/live_feedback_check.py": {
+      "bytes": 2504,
+      "sha256": "056474190eb222a30ecdfd331ba42a6c29fb6af69f77e0660d755b2cb2409c0a"
+    },
+    "experiments/open_ended_sketch/tests/live_physics_check.py": {
+      "bytes": 2786,
+      "sha256": "6209d65638b5515d94bbd0ddc9908ed5848e89000da890481efe47fb9189db4d"
+    },
+    "experiments/open_ended_sketch/tests/live_response_first_check.py": {
+      "bytes": 2663,
+      "sha256": "ee280f36695c70d6f4fa993542d9e06d08523d10e943ce8c0fb6c22c3aa92297"
+    },
+    "experiments/open_ended_sketch/tests/live_table2_workflow_check.py": {
+      "bytes": 3085,
+      "sha256": "15c392c32edcd748bfc2c366a7595f16cec1d3d851c3e4c5377786c183f32909"
+    },
+    "experiments/open_ended_sketch/tests/live_visual_guidance_check.py": {
+      "bytes": 2020,
+      "sha256": "5b7408a6a6430eabef76676d9d12074decf621f4ceb8b404f8a2a2bdfdd975b4"
+    },
+    "experiments/open_ended_sketch/tests/run_three_agent_browser.py": {
+      "bytes": 7609,
+      "sha256": "b1629e5444a26e646e8a932eec53f413fc843b6eb9fbd4e37771873d1f65c8fe"
+    },
+    "experiments/open_ended_sketch/tests/test_case_export.cjs": {
+      "bytes": 13793,
+      "sha256": "c66d3a1a921bf5277a769987b1fc9deffbbd5d2427115b4dab79c5e559adeb5f"
+    },
+    "experiments/open_ended_sketch/tests/test_case_resume.py": {
+      "bytes": 9547,
+      "sha256": "292d2a52cb0bc03018e63fbbe5578d2748342b62cbf4fcd821248cc7f52e2f5d"
+    },
+    "experiments/open_ended_sketch/tests/test_compact.py": {
+      "bytes": 2421,
+      "sha256": "5e1abeae5d953dbc9775930719ca8e6e878bb64c3d8b0effc52981291b050ff5"
+    },
+    "experiments/open_ended_sketch/tests/test_connection_shapes.cjs": {
+      "bytes": 4311,
+      "sha256": "c015732621b5ae6ed8deebb51384cfc34cdaa5c960f6065e5ec297f0a023d529"
+    },
+    "experiments/open_ended_sketch/tests/test_edit_command_decoration.py": {
+      "bytes": 6408,
+      "sha256": "ac28939d8144f3fd5e96bb104c02f7f62861a682a3f7fca4bf342c041d3886cf"
+    },
+    "experiments/open_ended_sketch/tests/test_editor.cjs": {
+      "bytes": 3447,
+      "sha256": "624155c8b12c9cc0a63d03135eae531757933d436f6c0ee1a25521c712f747ac"
+    },
+    "experiments/open_ended_sketch/tests/test_export_missing_browser.mjs": {
+      "bytes": 5129,
+      "sha256": "db8bd73d4cb931eaaddc7b83290d87963c5d7fd653fbd3f63549cd8835d31341"
+    },
+    "experiments/open_ended_sketch/tests/test_fast_dialogue.py": {
+      "bytes": 40152,
+      "sha256": "6ce7c4718873cb44f4de47aa1135127c7835e9b84782b558b87b20641a078411"
+    },
+    "experiments/open_ended_sketch/tests/test_feedback.py": {
+      "bytes": 88729,
+      "sha256": "ae092f09fb24201e5a2a1a1d38f89640eaf06c9a717cf292b8fe5606094fcb56"
+    },
+    "experiments/open_ended_sketch/tests/test_feedback_full_process.py": {
+      "bytes": 35728,
+      "sha256": "87d8ad1f6d3efe4c59befcad30ec4324124e1929f8ae883c01a4259b3662a762"
+    },
+    "experiments/open_ended_sketch/tests/test_feedback_workflow.cjs": {
+      "bytes": 2928,
+      "sha256": "88819c9348b221cfe1fc02c5a381e6ab79b918a168e28db726500ff1920e5af8"
+    },
+    "experiments/open_ended_sketch/tests/test_graph.cjs": {
+      "bytes": 1134,
+      "sha256": "9babdb830f1d889a6bd069f4610def8df7e48d3ad84e0dc1e1782aaa263211ca"
+    },
+    "experiments/open_ended_sketch/tests/test_guidance_trigger.py": {
+      "bytes": 14036,
+      "sha256": "c3361c178fdb0a75f787faa04226f92b3d6de0eab8643f60eab4163f2dae8a17"
+    },
+    "experiments/open_ended_sketch/tests/test_guided_hint_recovery.py": {
+      "bytes": 16161,
+      "sha256": "08f5a522bd96345477e6e0473befa3aa70729ba3524d08bee16cd8dc7348263b"
+    },
+    "experiments/open_ended_sketch/tests/test_highlight_delivery.py": {
+      "bytes": 14857,
+      "sha256": "a877f8b821fe360632c9e408ee632aabb88f50aca8799432c5fce889406e7dad"
+    },
+    "experiments/open_ended_sketch/tests/test_hint_motion_delivery.py": {
+      "bytes": 14309,
+      "sha256": "16e26938acf4c5da74e24f686b6cd07fb0ae738c098c4e56cb163974eff89be7"
+    },
+    "experiments/open_ended_sketch/tests/test_historical_feedback_failures.py": {
+      "bytes": 12819,
+      "sha256": "a37285ad74a1799e7275d8af8edf309cccae5f8c36fa5399b4cece3f2bfef9cb"
+    },
+    "experiments/open_ended_sketch/tests/test_learner_model.py": {
+      "bytes": 12063,
+      "sha256": "48b1552b13502c4a208cb620ab59ec1057051e3ec146b9c6b3ac23e525d40508"
+    },
+    "experiments/open_ended_sketch/tests/test_local_revision_review.py": {
+      "bytes": 15068,
+      "sha256": "f649a8443f92fe0522cd41c9c322dcbf0fc51bf9dac5093294707a56cca0b433"
+    },
+    "experiments/open_ended_sketch/tests/test_mechanism.cjs": {
+      "bytes": 1695,
+      "sha256": "7c4cc4d5d0862b40ba03ae91359f2953fd01d99036b63e86a3c16032e1cbda95"
+    },
+    "experiments/open_ended_sketch/tests/test_modeling_hint.py": {
+      "bytes": 15386,
+      "sha256": "054b6ed7b249c67191d667dc03a224ad845f6f5c3bfba6ab7400ff6e06ca8b4a"
+    },
+    "experiments/open_ended_sketch/tests/test_move_entry_conditions.py": {
+      "bytes": 19173,
+      "sha256": "b59a085829147e430e8b1bc9f7d0fe179a20e9dc90f7042facf2faf08be523d6"
+    },
+    "experiments/open_ended_sketch/tests/test_pending_evaluation_delivery.py": {
+      "bytes": 9731,
+      "sha256": "0e9d47a5d83a02ad6e9a6030303185fad5bbc94223637c31a3c7e3049bcaa2c9"
+    },
+    "experiments/open_ended_sketch/tests/test_question_feedback.py": {
+      "bytes": 5294,
+      "sha256": "743e0b7a9e0d0837495b3783672720e9891c5736c1d10470f2a7738ebaea21df"
+    },
+    "experiments/open_ended_sketch/tests/test_question_image.py": {
+      "bytes": 9758,
+      "sha256": "5db46ff24bece6206256e50a5694d4a2a2fa33044798ce315648e98f83428d26"
+    },
+    "experiments/open_ended_sketch/tests/test_recorded_delivery_failures_20261028.py": {
+      "bytes": 19079,
+      "sha256": "9ea6986939129f8f9dbba87b2c054b798042ab3d6dd4b7d2cd5d6762509b15ff"
+    },
+    "experiments/open_ended_sketch/tests/test_relation_geometry.cjs": {
+      "bytes": 4583,
+      "sha256": "564145ca2c3bb9cf10a942e9ccd620304e7a865783d11fcdeb9aaa2be997fb9b"
+    },
+    "experiments/open_ended_sketch/tests/test_resolved_dialogue.py": {
+      "bytes": 7519,
+      "sha256": "c06d8126c925e71dcdd5ade3b26a97637861f6bd1f6c11d7f65e457c63e2cd24"
+    },
+    "experiments/open_ended_sketch/tests/test_response_first.cjs": {
+      "bytes": 4805,
+      "sha256": "995928e2ace309feb0f2cb1d9092d2d9e1134a1fed0e4a229fc5d7d3090593d1"
+    },
+    "experiments/open_ended_sketch/tests/test_revision_authorization.py": {
+      "bytes": 6615,
+      "sha256": "96a10823a2d15ba767db8c30e1be3a0f933ebdac43b9cc71ca18841c70812713"
+    },
+    "experiments/open_ended_sketch/tests/test_revision_permission_browser.mjs": {
+      "bytes": 12064,
+      "sha256": "5b85706baf78c6ccfc18a622701e5d67cc83ed641fc9c1c1c10e5976e95c2457"
+    },
+    "experiments/open_ended_sketch/tests/test_revision_target.py": {
+      "bytes": 10300,
+      "sha256": "ac6b97b3978fced5a309beceec55b76a8336f84c41b7e780c01bc12e6d62a0e9"
+    },
+    "experiments/open_ended_sketch/tests/test_revoice_clarification.py": {
+      "bytes": 18124,
+      "sha256": "350e0312ce8fcfdbec215e85b0d3682e645a594312fca5dceddb3ab6ac35770c"
+    },
+    "experiments/open_ended_sketch/tests/test_schema.py": {
+      "bytes": 1917,
+      "sha256": "4654cdad2b7eb9b2200c316faba0aa943f8eea603994df7d5df2e8b1c3b673ec"
+    },
+    "experiments/open_ended_sketch/tests/test_student_geometry.cjs": {
+      "bytes": 1552,
+      "sha256": "91575eb24460796569503e74d4a74e3fa27c96ded596e4ece9ca9b81830b0439"
+    },
+    "experiments/open_ended_sketch/tests/test_student_server.py": {
+      "bytes": 4700,
+      "sha256": "f5e28e036e8bbffec2b3e9eeea898ed397bb7a50e798d0cad8f81d875fa48f52"
+    },
+    "experiments/open_ended_sketch/tests/test_submission_notice_browser.mjs": {
+      "bytes": 10178,
+      "sha256": "0c2410ca134c854394ecf87482a2a5611138e5ef35d3462392a0b7350b0d5c6c"
+    },
+    "experiments/open_ended_sketch/tests/test_support_routing.py": {
+      "bytes": 16421,
+      "sha256": "904d80340e1ac3c276b62208ed18ea95211b95c08baba07644353fe823763054"
+    },
+    "experiments/open_ended_sketch/tests/test_task_figure_browser.mjs": {
+      "bytes": 18589,
+      "sha256": "c3b9c40bd9fa0460080cd4b3b4f85acf1d14d8b3b348afacca04e035486adfad"
+    },
+    "experiments/open_ended_sketch/tests/test_text_connection_browser.mjs": {
+      "bytes": 19634,
+      "sha256": "b8fb074c88a14025316c27c337f9e5ca7c2e4896665508e72784056bb5c4788d"
+    },
+    "experiments/open_ended_sketch/tests/test_three_agent_browser.mjs": {
+      "bytes": 5697,
+      "sha256": "0b6a9f0c2aa1092531163173ac899c3c65f6c8636a2c6c708a689734f2f37bb4"
+    },
+    "experiments/open_ended_sketch/tests/test_three_agent_process_recovery.py": {
+      "bytes": 17165,
+      "sha256": "ccfd70299b1cd8c577bf83eb2df7bb25f83eab767fd2d499eefdb4065beb6a69"
+    },
+    "experiments/open_ended_sketch/tests/test_three_agent_runtime.py": {
+      "bytes": 32076,
+      "sha256": "476a4bec6cda1938d1307e8ca70aa2be3f6c5d725d3995354102d677cfbfa5f3"
+    },
+    "experiments/open_ended_sketch/tests/test_tutor_context.py": {
+      "bytes": 6822,
+      "sha256": "3ffea89025633e3d1f1f0f27839c20b3963276c35cbb99ccb290278daa19082a"
+    },
+    "experiments/open_ended_sketch/tests/test_tutor_move_selection.py": {
+      "bytes": 29246,
+      "sha256": "45b306d1a0e13b94a76584bdafd476114fc6f802c3c1db796f060bff41fe30e4"
+    },
+    "experiments/open_ended_sketch/tests/test_tutor_visual_grounding.py": {
+      "bytes": 15349,
+      "sha256": "55a2ab4944f65813653f1867fbcca4ea9facb8ffea67f3a5539c89fdb3040281"
+    },
+    "experiments/open_ended_sketch/tests/test_two_screen_browser.mjs": {
+      "bytes": 36764,
+      "sha256": "2e03bf575a98d41811c26fadd240475bbfe32a980a65605916b708db449c2483"
+    },
+    "experiments/open_ended_sketch/tests/test_uncertainty_scaffolding.py": {
+      "bytes": 26969,
+      "sha256": "3324c7ff4ce8d4b28db52cc14ba50c444fc49d1a083748642296f17a4de1953c"
+    },
+    "experiments/open_ended_sketch/viewer.html": {
+      "bytes": 10399,
+      "sha256": "1f806c1d823082274af5e1e3dd1d2789e1680277cefc6ef99621a0d8d3901be2"
+    },
+    "experiments/open_ended_sketch/viewer.js": {
+      "bytes": 20765,
+      "sha256": "753b784ed25b110e6f2bb4d8c8dba9dfe666295fae7832d0651f5222133a2a85"
+    }
+  },
+  "file_count": 186,
+  "total_bytes": 2635124
+}

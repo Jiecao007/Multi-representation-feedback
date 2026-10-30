@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+node_modules/
+/data/
+/outputs/
+experiments/open_ended_sketch/app/runs/
+experiments/open_ended_sketch/results/
+experiments/open_ended_sketch/inputs/
+experiments/open_ended_sketch/tests/fixtures/

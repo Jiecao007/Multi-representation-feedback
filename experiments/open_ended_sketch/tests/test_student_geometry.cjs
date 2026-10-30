@@ -1,0 +1,18 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const G=require('../app/geometry.js');
+const original=JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'../results/20260922T035929331824Z/pic1.scene.json')));
+const scene=G.copy(original),anchors=G.anchors(scene),node=scene.objects.find(o=>o.id==='o3');
+const edge=scene.relations.find(r=>r.target===node.id),old=G.points(scene,edge,anchors);
+G.move(scene,node.id,node.bbox.x+20,node.bbox.y+30);
+const moved=G.points(scene,edge,anchors);
+assert.equal(moved.at(-1).x-old.at(-1).x,20);
+assert.equal(moved.at(-1).y-old.at(-1).y,30);
+assert.deepEqual(moved[0],old[0]);
+const export1=G.exportScene(scene,anchors);assert.deepEqual(export1.relations.find(r=>r.id===edge.id).points,moved);
+assert.deepEqual(original.relations.find(r=>r.id===edge.id).points,old);
+G.move(scene,node.id,-9999,9999);assert.equal(node.bbox.x,0);assert.equal(node.bbox.y+node.bbox.height,1000);
+G.resize(scene,node.id,10000);assert.equal(node.bbox.width,1000);assert.equal(node.bbox.height,1000);assert.equal(node.bbox.x,0);assert.equal(node.bbox.y,0);
+const child=scene.objects.find(o=>o.id==='o4');G.move(scene,child.id,10,10);const group=scene.objects.find(o=>o.id==='o6');assert.ok(group.bbox.x<=child.bbox.x&&group.bbox.y<=child.bbox.y);
+const exported=G.exportScene(scene,anchors);assert.ok(exported.relations.every(r=>r.points.every(p=>p.x>=0&&p.x<=1000&&p.y>=0&&p.y<=1000)));
+console.log('Student geometry: drag, arrow anchoring, export, boundaries, resizing and group bounds passed.');
